@@ -11,10 +11,10 @@ using TravelAgency.Tables;
 
 namespace TravelAgency.Forms
 {
-    public partial class AirportForm : Form
+    public partial class CityForm : Form
     {
         int originalHeight;
-        public AirportForm()
+        public CityForm()
         {
             InitializeComponent();
         }
@@ -24,16 +24,12 @@ namespace TravelAgency.Forms
 
         }
 
-        private void AirportForm_Load(object sender, EventArgs e)
+        private void CountryForm_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
             groupBox2.Visible = false;
-            Airport.GetAirport();
-            comboBox1.DataSource = Airport.dtAirport;
-            comboBox1.DisplayMember = "Город";
-            comboBox2.DataSource = Airport.dtAirport;
-            comboBox2.DisplayMember = "Город";
-            airports.DataSource = Airport.dtAirport;
+            Country.GetCountry();
+            countries.DataSource = Country.dtCountry;
             originalHeight = this.Height;
         }
 
@@ -49,8 +45,8 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox1.Text = "";
-            textBox2.Text = "";
+            name_field_add.Text = "";
+            id_field_add.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,8 +61,8 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox5.Text = "";
-            textBox6.Text = "";
+            name_field_edit.Text = "";
+            id_field_edit.Text = "";
         }
 
         private void canceladditbtn_Click(object sender, EventArgs e)
@@ -81,8 +77,8 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox1.Text = "";
-            textBox2.Text = "";
+            id_field_add.Text = "";
+            name_field_add.Text = "";
         }
 
         private void canceleditbtn_Click(object sender, EventArgs e)
@@ -97,41 +93,42 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox5.Text = "";
-            textBox6.Text = "";
+            id_field_edit.Text = "";
+            name_field_edit.Text = "";
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            if (Airport.ValidateIATA(textBox1.Text)
-                && textBox2.Text != ""
-                && comboBox1.Text != "")
+            if (name_field_add.Text != ""
+                && Country.ValidateOKSM(id_field_add.Text))
             {
-                string query = $"SELECT id FROM airport WHERE id = \"{textBox1.Text}\"";
+                string query = $"SELECT id FROM Country WHERE id = \"{id_field_add.Text}\"" +
+                    $"OR name = \"{name_field_add.Text}\"";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Аэропорт с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Text = "";
+                    MessageBox.Show("Страна с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    name_field_add.Text = "";
                 }
                 else
                 {
-                    if (Airport.AddAirport(textBox1.Text, textBox2.Text, comboBox1.Text))
+                    if (Country.AddCountry(id_field_add.Text, name_field_add.Text))
                     {
-                        MessageBox.Show("Аэропорт добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        Airport.GetAirport();
+                        MessageBox.Show("Страна добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        name_field_add.Text = "";
+                        name_field_add.Text = "";
+                        Country.GetCountry();
                     }
                     else
                     {
-                        MessageBox.Show("Аэропорт не был добавлен!");
+                        MessageBox.Show("Страна не была добавлена!");
                     }
                 }
             }
             else
             {
+                id_field_add.Text = "";
                 MessageBox.Show("Проверьте правильность заполнения полей!");
             }
         }
@@ -145,11 +142,11 @@ namespace TravelAgency.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (airports.SelectedRows.Count > 0)
+            if (countries.SelectedRows.Count > 0)
             {
-                Airport.DeleteAirport(airports.Rows[airports.SelectedRows[0].Index].Cells[0].Value.ToString());
-                Airport.GetAirport();
-                MessageBox.Show($"Аэропорт успешно удалён!");
+                Country.DeleteCountry(countries.Rows[countries.SelectedRows[0].Index].Cells[0].Value.ToString());
+                Country.GetCountry();
+                MessageBox.Show($"Страна успешно удалена!");
             }
             else
             {
@@ -160,39 +157,35 @@ namespace TravelAgency.Forms
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-            if (textBox5.Text != ""
-                && Airport.ValidateIATA(textBox6.Text)
-                && comboBox2.Text != "")
+            if (Country.ValidateOKSM(id_field_add.Text)
+                && name_field_edit.Text != "")
             {
-                string query = $"SELECT id FROM airport WHERE id = \"{textBox6.Text}\" AND " +
-                    $"name = \"{textBox5.Text}\" AND city_id =" +
-                    $"(SELECT id FROM city WHERE  city.name = \"{comboBox2.Text}\")";
+                string query = $"SELECT id FROM country WHERE name =\"{name_field_edit.Text}\";";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Такой аэропорт уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Text = "";
+                    MessageBox.Show("Такая страна уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    id_field_edit.Text = "";
+                    name_field_edit.Text = "";
                 }
                 else
                 {
                     try
                     {
-                        DataGridViewRow row = airports.SelectedRows[0];
-                        string IATA_old = row.Cells["IATA код"].Value.ToString();
-                        string name_old = row.Cells["Название"].Value.ToString();
-                        string city_id_old = row.Cells["Город"].Value.ToString();
-                        if (Airport.EditAirport(IATA_old, name_old, city_id_old,
-                            textBox6.Text.ToUpper(), textBox5.Text, comboBox2.Text))
+                        DataGridViewRow row = countries.SelectedRows[0];
+                        string old_code = row.Cells["ОКСМ код"].Value.ToString();
+                        string old_name = row.Cells["Название"].Value.ToString();
+                        if (Country.EditCountry(old_code, id_field_edit.Text, old_name, name_field_edit.Text))
                         {
-                            MessageBox.Show("Аэропорт добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBox1.Text = "";
-                            textBox2.Text = "";
-                            Airport.GetAirport();
+                            MessageBox.Show("Данные о стране изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            id_field_edit.Text = "";
+                            name_field_edit.Text = "";
+                            Country.GetCountry();
                         }
                         else
                         {
-                            MessageBox.Show("Аэропорт не был добавлен!");
+                            MessageBox.Show("Данные о стране не были изменены!");
                         }
                     }
                     catch
@@ -205,6 +198,11 @@ namespace TravelAgency.Forms
             {
                 MessageBox.Show("Проверьте правильность заполнения полей!");
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

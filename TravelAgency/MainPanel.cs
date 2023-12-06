@@ -29,5 +29,12 @@ namespace TravelAgency
         {
             DBconnection.Connect();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CountryForm af = new CountryForm();
+            af.Show();
+        }
     }
 }
