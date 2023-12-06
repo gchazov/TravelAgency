@@ -43,5 +43,17 @@ namespace TravelAgency
             CityForm cf = new CityForm();
             cf.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HotelForm hf = new HotelForm();
+            hf.Show();
+        }
     }
 }
