@@ -17,7 +17,8 @@ namespace TravelAgency.Tables
         {
             try
             {
-                DBconnection.msCommand.CommandText = "SELECT City.id AS \"ОКСМ код\", City.name AS \"Название\" FROM City;";
+                DBconnection.msCommand.CommandText = "SELECT city.name AS \"Название\", country.name AS \"Страна\" FROM City" +
+                    " INNER JOIN country ON country_id = country.id;";
                 dtCity.Clear();
                 DBconnection.msDataAdapter.SelectCommand = DBconnection.msCommand;
                 DBconnection.msDataAdapter.Fill(dtCity);
@@ -29,12 +30,12 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public bool AddCity(string id, string name)
+        static public bool AddCity(string name, string country)
         {
             try
             {
-                DBconnection.msCommand.CommandText = $"INSERT INTO City VALUES" +
-                    $" (\"{id}\", \"{name}\");";
+                DBconnection.msCommand.CommandText = $"INSERT INTO City (name, country_id) VALUES" +
+                    $" (\"{name}\", (SELECT id FROM country WHERE country.name = \"{country}\"));";
                 return DBconnection.msCommand.ExecuteNonQuery() > 0;
             }
             catch (Exception ex)
@@ -44,13 +45,15 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public bool EditCity(string old_code, string new_code, string old_name, string new_name)
+        static public bool EditCity(string old_name, string new_name,
+            string old_country, string new_country)
         {
             try
             {
-                DBconnection.msCommand.CommandText = $"UPDATE City SET id = \"{new_code}\", " +
-                    $"name = \"{new_name}\"" +
-                    $"WHERE id = \"{old_code}\" AND name = \"{old_name}\";";
+                DBconnection.msCommand.CommandText = $"UPDATE City SET name = \"{new_name}\", " +
+                    $"country_id = (SELECT id FROM country WHERE country.name = \"{new_country}\")" +
+                    $"WHERE name = \"{old_name}\" AND country_id = " +
+                    $"(SELECT id FROM country WHERE country.name = \"{old_country}\");";
                 return DBconnection.msCommand.ExecuteNonQuery() > 0;
             }
             catch (Exception ex)
@@ -64,18 +67,13 @@ namespace TravelAgency.Tables
         {
             try
             {
-                DBconnection.msCommand.CommandText = $"DELETE FROM City WHERE id = \"{del_code}\";";
+                DBconnection.msCommand.CommandText = $"DELETE FROM City WHERE name = \"{del_code}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        static public bool ValidateOKSM(string oksm)
-        {
-            return oksm.Length == 3 && Regex.IsMatch(oksm, @"^[0-9]+$");
         }
         
     }

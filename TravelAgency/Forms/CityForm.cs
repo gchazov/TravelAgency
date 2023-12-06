@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -24,12 +25,16 @@ namespace TravelAgency.Forms
 
         }
 
-        private void CountryForm_Load(object sender, EventArgs e)
+        private void CityForm_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
             groupBox2.Visible = false;
-            Country.GetCountry();
-            countries.DataSource = Country.dtCountry;
+            City.GetCity();
+            cities.DataSource = City.dtCity;
+            addCountry.DataSource = City.dtCity;
+            addCountry.DisplayMember = "Страна";
+            editCountry.DataSource = City.dtCity;
+            editCountry.DisplayMember = "Страна";
             originalHeight = this.Height;
         }
 
@@ -46,7 +51,6 @@ namespace TravelAgency.Forms
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
             name_field_add.Text = "";
-            id_field_add.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -62,7 +66,6 @@ namespace TravelAgency.Forms
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
             name_field_edit.Text = "";
-            id_field_edit.Text = "";
         }
 
         private void canceladditbtn_Click(object sender, EventArgs e)
@@ -77,7 +80,6 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            id_field_add.Text = "";
             name_field_add.Text = "";
         }
 
@@ -93,42 +95,40 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            id_field_edit.Text = "";
             name_field_edit.Text = "";
         }
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            if (name_field_add.Text != ""
-                && Country.ValidateOKSM(id_field_add.Text))
+            if (name_field_add.Text != "")
+
             {
-                string query = $"SELECT id FROM Country WHERE id = \"{id_field_add.Text}\"" +
-                    $"OR name = \"{name_field_add.Text}\"";
+                string query = $"SELECT id FROM city WHERE name = \"{name_field_add.Text}\" " +
+                    $"AND country_id = (SELECT id FROM country WHERE name = \"{addCountry.Text}\")";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Страна с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Город с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     name_field_add.Text = "";
                 }
                 else
                 {
-                    if (Country.AddCountry(id_field_add.Text, name_field_add.Text))
+                    if (City.AddCity(name_field_add.Text, addCountry.Text))
                     {
-                        MessageBox.Show("Страна добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Город добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         name_field_add.Text = "";
                         name_field_add.Text = "";
-                        Country.GetCountry();
+                        City.GetCity();
                     }
                     else
                     {
-                        MessageBox.Show("Страна не была добавлена!");
+                        MessageBox.Show("Город не был добавлен!");
                     }
                 }
             }
             else
             {
-                id_field_add.Text = "";
                 MessageBox.Show("Проверьте правильность заполнения полей!");
             }
         }
@@ -142,11 +142,11 @@ namespace TravelAgency.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (countries.SelectedRows.Count > 0)
+            if (cities.SelectedRows.Count > 0)
             {
-                Country.DeleteCountry(countries.Rows[countries.SelectedRows[0].Index].Cells[0].Value.ToString());
-                Country.GetCountry();
-                MessageBox.Show($"Страна успешно удалена!");
+                City.DeleteCity(cities.Rows[cities.SelectedRows[0].Index].Cells[0].Value.ToString());
+                City.GetCity();
+                MessageBox.Show($"Город успешно удален!");
             }
             else
             {
@@ -157,35 +157,32 @@ namespace TravelAgency.Forms
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-            if (Country.ValidateOKSM(id_field_add.Text)
-                && name_field_edit.Text != "")
+            if (name_field_edit.Text != "")
             {
                 string query = $"SELECT id FROM country WHERE name =\"{name_field_edit.Text}\";";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Такая страна уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    id_field_edit.Text = "";
+                    MessageBox.Show("Такой город уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     name_field_edit.Text = "";
                 }
                 else
                 {
                     try
                     {
-                        DataGridViewRow row = countries.SelectedRows[0];
-                        string old_code = row.Cells["ОКСМ код"].Value.ToString();
+                        DataGridViewRow row = cities.SelectedRows[0];
                         string old_name = row.Cells["Название"].Value.ToString();
-                        if (Country.EditCountry(old_code, id_field_edit.Text, old_name, name_field_edit.Text))
+                        string old_country = row.Cells["Страна"].Value.ToString();
+                        if (City.EditCity(old_name, name_field_edit.Text, old_country, editCountry.Text))
                         {
-                            MessageBox.Show("Данные о стране изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            id_field_edit.Text = "";
+                            MessageBox.Show("Данные о городе изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             name_field_edit.Text = "";
-                            Country.GetCountry();
+                            City.GetCity();
                         }
                         else
                         {
-                            MessageBox.Show("Данные о стране не были изменены!");
+                            MessageBox.Show("Данные о городе не были изменены!");
                         }
                     }
                     catch

@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.countries = new System.Windows.Forms.DataGridView();
+            this.cities = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addCountry = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.canceladditbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
             this.name_field_add = new System.Windows.Forms.TextBox();
@@ -43,40 +45,38 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.editCountry = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.id_field_add = new System.Windows.Forms.TextBox();
-            this.id_field_edit = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.countries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cities)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // countries
+            // cities
             // 
-            this.countries.AllowUserToAddRows = false;
-            this.countries.AllowUserToDeleteRows = false;
-            this.countries.AllowUserToResizeColumns = false;
-            this.countries.AllowUserToResizeRows = false;
-            this.countries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.countries.BackgroundColor = System.Drawing.Color.LavenderBlush;
-            this.countries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.countries.Location = new System.Drawing.Point(17, 50);
-            this.countries.Margin = new System.Windows.Forms.Padding(4);
-            this.countries.Name = "countries";
-            this.countries.ReadOnly = true;
-            this.countries.RowHeadersWidth = 51;
-            this.countries.RowTemplate.Height = 24;
-            this.countries.Size = new System.Drawing.Size(429, 220);
-            this.countries.TabIndex = 0;
+            this.cities.AllowUserToAddRows = false;
+            this.cities.AllowUserToDeleteRows = false;
+            this.cities.AllowUserToResizeColumns = false;
+            this.cities.AllowUserToResizeRows = false;
+            this.cities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cities.BackgroundColor = System.Drawing.Color.MintCream;
+            this.cities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cities.Location = new System.Drawing.Point(17, 50);
+            this.cities.Margin = new System.Windows.Forms.Padding(4);
+            this.cities.Name = "cities";
+            this.cities.ReadOnly = true;
+            this.cities.RowHeadersWidth = 51;
+            this.cities.RowTemplate.Height = 24;
+            this.cities.Size = new System.Drawing.Size(429, 220);
+            this.cities.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.id_field_add);
+            this.groupBox1.Controls.Add(this.addCountry);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.canceladditbtn);
             this.groupBox1.Controls.Add(this.addbtn);
@@ -90,6 +90,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // addCountry
+            // 
+            this.addCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.addCountry.FormattingEnabled = true;
+            this.addCountry.Location = new System.Drawing.Point(10, 131);
+            this.addCountry.Name = "addCountry";
+            this.addCountry.Size = new System.Drawing.Size(247, 35);
+            this.addCountry.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(189, 22);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Введите название: ";
             // 
             // canceladditbtn
             // 
@@ -117,8 +136,8 @@
             // 
             // name_field_add
             // 
-            this.name_field_add.Location = new System.Drawing.Point(10, 130);
-            this.name_field_add.MaxLength = 25;
+            this.name_field_add.Location = new System.Drawing.Point(10, 57);
+            this.name_field_add.MaxLength = 20;
             this.name_field_add.Name = "name_field_add";
             this.name_field_add.Size = new System.Drawing.Size(247, 36);
             this.name_field_add.TabIndex = 6;
@@ -129,9 +148,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 22);
+            this.label2.Size = new System.Drawing.Size(180, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Введите название: ";
+            this.label2.Text = "Выберите страну:";
             // 
             // button1
             // 
@@ -140,7 +159,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 54);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить страну";
+            this.button1.Text = "Добавить город";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -151,7 +170,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 54);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранную";
+            this.button2.Text = "Редактировать выбранный";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -162,7 +181,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранную";
+            this.button3.Text = "Удалить выбранный";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -183,14 +202,14 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 22);
+            this.label5.Size = new System.Drawing.Size(180, 22);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Введите название: ";
+            this.label5.Text = "Выберите страну:";
             // 
             // name_field_edit
             // 
-            this.name_field_edit.Location = new System.Drawing.Point(6, 130);
-            this.name_field_edit.MaxLength = 25;
+            this.name_field_edit.Location = new System.Drawing.Point(10, 57);
+            this.name_field_edit.MaxLength = 20;
             this.name_field_edit.Name = "name_field_edit";
             this.name_field_edit.Size = new System.Drawing.Size(264, 36);
             this.name_field_edit.TabIndex = 10;
@@ -221,7 +240,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.id_field_edit);
+            this.groupBox2.Controls.Add(this.editCountry);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.canceleditbtn);
             this.groupBox2.Controls.Add(this.editbtn);
@@ -235,35 +254,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
-            // label7
+            // editCountry
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(171, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(294, 37);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Таблица \"Страны\"";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(17, 286);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(586, 236);
-            this.panel1.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 22);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Введите код ОКСМ: ";
+            this.editCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.editCountry.FormattingEnabled = true;
+            this.editCountry.Location = new System.Drawing.Point(10, 130);
+            this.editCountry.Name = "editCountry";
+            this.editCountry.Size = new System.Drawing.Size(247, 35);
+            this.editCountry.TabIndex = 10;
             // 
             // label3
             // 
@@ -271,48 +269,51 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 22);
+            this.label3.Size = new System.Drawing.Size(179, 22);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Введите код ОКСМ: ";
+            this.label3.Text = "Введите название";
             // 
-            // id_field_add
+            // label7
             // 
-            this.id_field_add.Location = new System.Drawing.Point(10, 66);
-            this.id_field_add.MaxLength = 3;
-            this.id_field_add.Name = "id_field_add";
-            this.id_field_add.Size = new System.Drawing.Size(55, 36);
-            this.id_field_add.TabIndex = 5;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(171, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(286, 37);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Таблица \"Города\"";
             // 
-            // id_field_edit
+            // panel1
             // 
-            this.id_field_edit.Location = new System.Drawing.Point(10, 66);
-            this.id_field_edit.MaxLength = 3;
-            this.id_field_edit.Name = "id_field_edit";
-            this.id_field_edit.Size = new System.Drawing.Size(55, 36);
-            this.id_field_edit.TabIndex = 9;
-            this.id_field_edit.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.panel1.BackColor = System.Drawing.Color.MintCream;
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(17, 286);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(586, 236);
+            this.panel1.TabIndex = 8;
             // 
-            // CountryForm
+            // CityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(623, 280);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(623, 279);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.countries);
+            this.Controls.Add(this.cities);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "CountryForm";
+            this.Name = "CityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Страны";
-            this.Load += new System.EventHandler(this.CountryForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.countries)).EndInit();
+            this.Text = "Города";
+            this.Load += new System.EventHandler(this.CityForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cities)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -325,7 +326,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView countries;
+        private System.Windows.Forms.DataGridView cities;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -342,9 +343,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox id_field_add;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox id_field_edit;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox addCountry;
+        private System.Windows.Forms.ComboBox editCountry;
     }
 }

@@ -36,5 +36,12 @@ namespace TravelAgency
             CountryForm af = new CountryForm();
             af.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CityForm cf = new CityForm();
+            cf.Show();
+        }
     }
 }
