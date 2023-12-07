@@ -55,7 +55,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            name_field_add.Text = "";
+            clear_add_Click(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            name_field_edit.Text = "";
+            clear_add_Click(sender, e);
         }
 
         private void canceladditbtn_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            name_field_add.Text = "";
+            clear_add_Click(sender, e);
         }
 
         private void canceleditbtn_Click(object sender, EventArgs e)
@@ -116,15 +116,14 @@ namespace TravelAgency.Forms
                 if (res != null)
                 {
                     MessageBox.Show("Отель с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    name_field_add.Text = "";
+                    clear_add_Click(sender, e);
                 }
                 else
                 {
                     if (Hotel.AddHotel(name_field_add.Text, addCity.Text, stars_add.Text))
                     {
                         MessageBox.Show("Отель добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        name_field_add.Text = "";
-                        name_field_add.Text = "";
+                        clear_add_Click(sender, e);
                         Hotel.GetHotel();
                     }
                     else
@@ -179,7 +178,7 @@ namespace TravelAgency.Forms
                 if (res != null)
                 {
                     MessageBox.Show("Такой отель уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    name_field_edit.Text = "";
+                    clear_add_Click(sender, e);
                 }
                 else
                 {
@@ -193,7 +192,7 @@ namespace TravelAgency.Forms
                             old_stars, stars_edit.Text))
                         {
                             MessageBox.Show("Данные об отеле изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            name_field_edit.Text = "";
+                            clear_edit_Click(sender, e);
                             Hotel.GetHotel();
                         }
                         else
@@ -216,6 +215,20 @@ namespace TravelAgency.Forms
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void clear_add_Click(object sender, EventArgs e)
+        {
+            name_field_add.Text = "";
+            addCity.Text = "";
+            stars_add.Text = "";
+        }
+
+        private void clear_edit_Click(object sender, EventArgs e)
+        {
+            name_field_edit.Text = "";
+            editCity.Text = "";
+            stars_edit.Text = "";
         }
     }
 }

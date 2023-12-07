@@ -80,6 +80,11 @@ namespace TravelAgency.Tables
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        static public bool ValidatePassport(string passport)
+        {
+            return Regex.IsMatch(passport, @"\d{10}");
+        }
         
     }
 }

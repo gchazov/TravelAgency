@@ -100,8 +100,8 @@ namespace TravelAgency.Forms
         {
             if (name_add.Text != ""
                 && address_add.Text != "" &&
-                phone_add.Text != "" &&
-                passport_add.Text != "")
+                Office.ValidatePhone(phone_add.Text) &&
+                Client.ValidatePassport(passport_add.Text))
 
             {
                 string query = $"SELECT id FROM client WHERE name =  \"{name_add.Text}\"" +
@@ -169,8 +169,8 @@ namespace TravelAgency.Forms
         {
             if (name_edit.Text != "" &&
                 address_edit.Text != "" &&
-                phone_edit.Text != "" &&
-                passport_edit.Text != "")
+                Office.ValidatePhone(phone_edit.Text) &&
+                 Office.ValidatePhone(passport_edit.Text))
             {
                 string query = $"SELECT id FROM client WHERE name = \"{name_edit.Text}\" AND" +
                     $" address =\"{address_edit.Text}\" AND " +

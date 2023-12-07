@@ -30,6 +30,8 @@
         {
             this.countries = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.id_field_add = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.canceladditbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
             this.name_field_add = new System.Windows.Forms.TextBox();
@@ -43,12 +45,10 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.id_field_edit = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.id_field_add = new System.Windows.Forms.TextBox();
-            this.id_field_edit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.countries)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,6 +90,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // id_field_add
+            // 
+            this.id_field_add.Location = new System.Drawing.Point(10, 66);
+            this.id_field_add.MaxLength = 3;
+            this.id_field_add.Name = "id_field_add";
+            this.id_field_add.Size = new System.Drawing.Size(55, 36);
+            this.id_field_add.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 22);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Введите код ОКСМ: ";
             // 
             // canceladditbtn
             // 
@@ -235,6 +253,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
+            // id_field_edit
+            // 
+            this.id_field_edit.Location = new System.Drawing.Point(10, 66);
+            this.id_field_edit.MaxLength = 3;
+            this.id_field_edit.Name = "id_field_edit";
+            this.id_field_edit.Size = new System.Drawing.Size(55, 36);
+            this.id_field_edit.TabIndex = 9;
+            this.id_field_edit.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(197, 22);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Введите код ОКСМ: ";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -255,49 +292,12 @@
             this.panel1.Size = new System.Drawing.Size(586, 236);
             this.panel1.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 22);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Введите код ОКСМ: ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 22);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Введите код ОКСМ: ";
-            // 
-            // id_field_add
-            // 
-            this.id_field_add.Location = new System.Drawing.Point(10, 66);
-            this.id_field_add.MaxLength = 3;
-            this.id_field_add.Name = "id_field_add";
-            this.id_field_add.Size = new System.Drawing.Size(55, 36);
-            this.id_field_add.TabIndex = 5;
-            // 
-            // id_field_edit
-            // 
-            this.id_field_edit.Location = new System.Drawing.Point(10, 66);
-            this.id_field_edit.MaxLength = 3;
-            this.id_field_edit.Name = "id_field_edit";
-            this.id_field_edit.Size = new System.Drawing.Size(55, 36);
-            this.id_field_edit.TabIndex = 9;
-            this.id_field_edit.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
             // CountryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(623, 280);
+            this.ClientSize = new System.Drawing.Size(623, 277);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

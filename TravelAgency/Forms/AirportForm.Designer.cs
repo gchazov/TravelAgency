@@ -30,6 +30,7 @@
         {
             this.airports = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_add_btn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.canceladditbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear_edit_btn = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,6 +82,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.clear_add_btn);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.canceladditbtn);
             this.groupBox1.Controls.Add(this.addbtn);
@@ -96,6 +99,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // clear_add_btn
+            // 
+            this.clear_add_btn.BackColor = System.Drawing.Color.Violet;
+            this.clear_add_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_add_btn.Location = new System.Drawing.Point(210, 218);
+            this.clear_add_btn.Name = "clear_add_btn";
+            this.clear_add_btn.Size = new System.Drawing.Size(97, 34);
+            this.clear_add_btn.TabIndex = 10;
+            this.clear_add_btn.Text = "Очистить";
+            this.clear_add_btn.UseVisualStyleBackColor = false;
+            this.clear_add_btn.Click += new System.EventHandler(this.clear_add_btn_Click);
             // 
             // comboBox1
             // 
@@ -236,7 +251,7 @@
             this.textBox5.MaxLength = 45;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(302, 36);
-            this.textBox5.TabIndex = 11;
+            this.textBox5.TabIndex = 12;
             // 
             // textBox6
             // 
@@ -244,7 +259,7 @@
             this.textBox6.MaxLength = 3;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(67, 36);
-            this.textBox6.TabIndex = 10;
+            this.textBox6.TabIndex = 11;
             // 
             // label4
             // 
@@ -273,7 +288,7 @@
             this.editbtn.Location = new System.Drawing.Point(11, 217);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(89, 36);
-            this.editbtn.TabIndex = 13;
+            this.editbtn.TabIndex = 14;
             this.editbtn.Text = "Изменить";
             this.editbtn.UseVisualStyleBackColor = false;
             this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
@@ -285,13 +300,14 @@
             this.canceleditbtn.Location = new System.Drawing.Point(106, 217);
             this.canceleditbtn.Name = "canceleditbtn";
             this.canceleditbtn.Size = new System.Drawing.Size(94, 36);
-            this.canceleditbtn.TabIndex = 14;
+            this.canceleditbtn.TabIndex = 15;
             this.canceleditbtn.Text = "Отменить";
             this.canceleditbtn.UseVisualStyleBackColor = false;
             this.canceleditbtn.Click += new System.EventHandler(this.canceleditbtn_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.clear_edit_btn);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.canceleditbtn);
             this.groupBox2.Controls.Add(this.editbtn);
@@ -308,10 +324,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
+            // clear_edit_btn
+            // 
+            this.clear_edit_btn.BackColor = System.Drawing.Color.Violet;
+            this.clear_edit_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_edit_btn.Location = new System.Drawing.Point(210, 218);
+            this.clear_edit_btn.Name = "clear_edit_btn";
+            this.clear_edit_btn.Size = new System.Drawing.Size(97, 34);
+            this.clear_edit_btn.TabIndex = 16;
+            this.clear_edit_btn.Text = "Очистить";
+            this.clear_edit_btn.UseVisualStyleBackColor = false;
+            this.clear_edit_btn.Click += new System.EventHandler(this.clear_edit_btn_Click);
+            // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 27;
             this.comboBox2.Location = new System.Drawing.Point(11, 177);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(185, 35);
@@ -342,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(779, 282);
+            this.ClientSize = new System.Drawing.Size(764, 280);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -395,5 +424,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button clear_add_btn;
+        private System.Windows.Forms.Button clear_edit_btn;
     }
 }

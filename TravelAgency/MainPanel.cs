@@ -69,5 +69,12 @@ namespace TravelAgency
             ClientForm cf = new ClientForm();
             cf.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmployeeForm ef = new EmployeeForm();
+            ef.Show();
+        }
     }
 }

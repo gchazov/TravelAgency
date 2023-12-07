@@ -30,6 +30,8 @@
         {
             this.offices = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.phone_add = new System.Windows.Forms.TextBox();
+            this.CEO_add = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.canceladditbtn = new System.Windows.Forms.Button();
@@ -45,14 +47,14 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.phone_edit = new System.Windows.Forms.TextBox();
+            this.CEO_edit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CEO_add = new System.Windows.Forms.TextBox();
-            this.CEO_edit = new System.Windows.Forms.TextBox();
-            this.phone_add = new System.Windows.Forms.TextBox();
-            this.phone_edit = new System.Windows.Forms.TextBox();
+            this.clear_add = new System.Windows.Forms.Button();
+            this.clear_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.offices)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,6 +82,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.clear_add);
             this.groupBox1.Controls.Add(this.phone_add);
             this.groupBox1.Controls.Add(this.CEO_add);
             this.groupBox1.Controls.Add(this.label4);
@@ -96,6 +99,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // phone_add
+            // 
+            this.phone_add.Location = new System.Drawing.Point(10, 205);
+            this.phone_add.MaxLength = 11;
+            this.phone_add.Name = "phone_add";
+            this.phone_add.Size = new System.Drawing.Size(179, 36);
+            this.phone_add.TabIndex = 7;
+            // 
+            // CEO_add
+            // 
+            this.CEO_add.Location = new System.Drawing.Point(10, 130);
+            this.CEO_add.MaxLength = 45;
+            this.CEO_add.Name = "CEO_add";
+            this.CEO_add.Size = new System.Drawing.Size(264, 36);
+            this.CEO_add.TabIndex = 6;
             // 
             // label4
             // 
@@ -247,6 +266,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.clear_edit);
             this.groupBox2.Controls.Add(this.phone_edit);
             this.groupBox2.Controls.Add(this.CEO_edit);
             this.groupBox2.Controls.Add(this.label6);
@@ -262,6 +282,22 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
+            // 
+            // phone_edit
+            // 
+            this.phone_edit.Location = new System.Drawing.Point(10, 206);
+            this.phone_edit.MaxLength = 11;
+            this.phone_edit.Name = "phone_edit";
+            this.phone_edit.Size = new System.Drawing.Size(179, 36);
+            this.phone_edit.TabIndex = 12;
+            // 
+            // CEO_edit
+            // 
+            this.CEO_edit.Location = new System.Drawing.Point(10, 130);
+            this.CEO_edit.MaxLength = 45;
+            this.CEO_edit.Name = "CEO_edit";
+            this.CEO_edit.Size = new System.Drawing.Size(264, 36);
+            this.CEO_edit.TabIndex = 11;
             // 
             // label6
             // 
@@ -304,44 +340,36 @@
             this.panel1.Size = new System.Drawing.Size(939, 316);
             this.panel1.TabIndex = 8;
             // 
-            // CEO_add
+            // clear_add
             // 
-            this.CEO_add.Location = new System.Drawing.Point(10, 130);
-            this.CEO_add.MaxLength = 45;
-            this.CEO_add.Name = "CEO_add";
-            this.CEO_add.Size = new System.Drawing.Size(264, 36);
-            this.CEO_add.TabIndex = 6;
+            this.clear_add.BackColor = System.Drawing.Color.Violet;
+            this.clear_add.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_add.Location = new System.Drawing.Point(210, 247);
+            this.clear_add.Name = "clear_add";
+            this.clear_add.Size = new System.Drawing.Size(95, 38);
+            this.clear_add.TabIndex = 12;
+            this.clear_add.Text = "Очистить";
+            this.clear_add.UseVisualStyleBackColor = false;
+            this.clear_add.Click += new System.EventHandler(this.clear_add_Click);
             // 
-            // CEO_edit
+            // clear_edit
             // 
-            this.CEO_edit.Location = new System.Drawing.Point(10, 130);
-            this.CEO_edit.MaxLength = 45;
-            this.CEO_edit.Name = "CEO_edit";
-            this.CEO_edit.Size = new System.Drawing.Size(264, 36);
-            this.CEO_edit.TabIndex = 11;
-            // 
-            // phone_add
-            // 
-            this.phone_add.Location = new System.Drawing.Point(10, 205);
-            this.phone_add.MaxLength = 11;
-            this.phone_add.Name = "phone_add";
-            this.phone_add.Size = new System.Drawing.Size(179, 36);
-            this.phone_add.TabIndex = 7;
-            // 
-            // phone_edit
-            // 
-            this.phone_edit.Location = new System.Drawing.Point(10, 206);
-            this.phone_edit.MaxLength = 11;
-            this.phone_edit.Name = "phone_edit";
-            this.phone_edit.Size = new System.Drawing.Size(179, 36);
-            this.phone_edit.TabIndex = 12;
+            this.clear_edit.BackColor = System.Drawing.Color.Violet;
+            this.clear_edit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_edit.Location = new System.Drawing.Point(211, 247);
+            this.clear_edit.Name = "clear_edit";
+            this.clear_edit.Size = new System.Drawing.Size(95, 38);
+            this.clear_edit.TabIndex = 13;
+            this.clear_edit.Text = "Очистить";
+            this.clear_edit.UseVisualStyleBackColor = false;
+            this.clear_edit.Click += new System.EventHandler(this.clear_edit_Click);
             // 
             // OfficeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(973, 280);
+            this.ClientSize = new System.Drawing.Size(973, 634);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -394,5 +422,7 @@
         private System.Windows.Forms.TextBox CEO_add;
         private System.Windows.Forms.TextBox phone_edit;
         private System.Windows.Forms.TextBox CEO_edit;
+        private System.Windows.Forms.Button clear_add;
+        private System.Windows.Forms.Button clear_edit;
     }
 }

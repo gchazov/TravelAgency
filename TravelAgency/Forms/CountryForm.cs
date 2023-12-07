@@ -110,6 +110,7 @@ namespace TravelAgency.Forms
                 {
                     MessageBox.Show("Страна с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     name_field_add.Text = "";
+                    id_field_add.Text = "";
                 }
                 else
                 {
@@ -117,7 +118,7 @@ namespace TravelAgency.Forms
                     {
                         MessageBox.Show("Страна добавлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         name_field_add.Text = "";
-                        name_field_add.Text = "";
+                        id_field_add.Text = "";
                         Country.GetCountry();
                     }
                     else
@@ -129,6 +130,7 @@ namespace TravelAgency.Forms
             else
             {
                 id_field_add.Text = "";
+                name_field_add.Text = "";
                 MessageBox.Show("Проверьте правильность заполнения полей!");
             }
         }

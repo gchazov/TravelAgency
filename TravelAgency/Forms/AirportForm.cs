@@ -51,8 +51,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox1.Text = "";
-            textBox2.Text = "";
+            clear_add_btn_Click(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,8 +66,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox5.Text = "";
-            textBox6.Text = "";
+            clear_edit_btn_Click(sender, e);
         }
 
         private void canceladditbtn_Click(object sender, EventArgs e)
@@ -83,8 +81,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox1.Text = "";
-            textBox2.Text = "";
+            clear_add_btn_Click(sender, e);
         }
 
         private void canceleditbtn_Click(object sender, EventArgs e)
@@ -99,8 +96,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            textBox5.Text = "";
-            textBox6.Text = "";
+            clear_edit_btn_Click(sender, e);
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -115,15 +111,14 @@ namespace TravelAgency.Forms
                 if (res != null)
                 {
                     MessageBox.Show("Аэропорт с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Text = "";
+                    clear_add_btn_Click(sender, e);
                 }
                 else
                 {
                     if (Airport.AddAirport(textBox1.Text, textBox2.Text, comboBox1.Text))
                     {
                         MessageBox.Show("Аэропорт добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        textBox1.Text = "";
-                        textBox2.Text = "";
+                        clear_add_btn_Click(sender, e);
                         Airport.GetAirport();
                     }
                     else
@@ -174,7 +169,7 @@ namespace TravelAgency.Forms
                 if (res != null)
                 {
                     MessageBox.Show("Такой аэропорт уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Text = "";
+                    clear_edit_btn_Click(sender, e);
                 }
                 else
                 {
@@ -188,8 +183,7 @@ namespace TravelAgency.Forms
                             textBox6.Text.ToUpper(), textBox5.Text, comboBox2.Text))
                         {
                             MessageBox.Show("Аэропорт добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBox1.Text = "";
-                            textBox2.Text = "";
+                            clear_add_btn_Click(sender, e);
                             Airport.GetAirport();
                         }
                         else
@@ -207,6 +201,18 @@ namespace TravelAgency.Forms
             {
                 MessageBox.Show("Проверьте правильность заполнения полей!");
             }
+        }
+
+        private void clear_add_btn_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+        }
+
+        private void clear_edit_btn_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = "";
+            textBox6.Text = "";
         }
     }
 }

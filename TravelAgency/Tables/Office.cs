@@ -78,5 +78,9 @@ namespace TravelAgency.Tables
             }
         }
         
+        static public bool ValidatePhone(string phone)
+        {
+            return Regex.IsMatch(phone, @"^8\d{10}");
+        }
     }
 }

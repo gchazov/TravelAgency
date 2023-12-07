@@ -12,10 +12,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
-    public partial class OfficeForm : Form
+    public partial class EmployeeForm : Form
     {
         int originalHeight;
-        public OfficeForm()
+        public EmployeeForm()
         {
             InitializeComponent();
         }
@@ -25,13 +25,18 @@ namespace TravelAgency.Forms
 
         }
 
-        private void OfficeForm_Load(object sender, EventArgs e)
+        private void EmployeeForm_Load(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
             groupBox2.Visible = false;
-
             Office.GetOffice();
-            offices.DataSource = Office.dtOffice;
+            office_add.DataSource = Office.dtOffice;
+            office_add.DisplayMember = "Адрес";
+            office_edit.DataSource = Office.dtOffice;
+            office_edit.DisplayMember = "Адрес";
+
+            Employee.GetEmployee();
+            employees.DataSource = Employee.dtEmployee;
             
             originalHeight = this.Height;
         }
@@ -48,7 +53,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            clear_add_Click(sender, e);
+            clear_btn(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,7 +83,7 @@ namespace TravelAgency.Forms
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;
-            clear_add_Click(sender, e);
+            clear_btn(sender, e);
         }
 
         private void canceleditbtn_Click(object sender, EventArgs e)
@@ -98,32 +103,39 @@ namespace TravelAgency.Forms
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            if (address_add.Text != ""
-                && CEO_add.Text != "" &&
-                 Office.ValidatePhone(phone_add.Text))
+            if (name_add.Text != ""
+                && address_add.Text != "" &&
+                Office.ValidatePhone(phone_add.Text) &&
+                Employee.ValidatePassport(passport_add.Text) &&
+                position_add.Text != "")
 
             {
-                string query = $"SELECT id FROM office WHERE address = \"{address_add.Text}\" " +
-                    $"AND CEO_name = \"{CEO_add.Text}\" AND " +
-                    $"phone = \"{phone_add.Text}\"";
+                string query = $"SELECT id FROM employee WHERE name = \"{name_add.Text}\" " +
+                    $"AND address = \"{address_add.Text}\" " +
+                    $"AND passport = \"{passport_add.Text}\" AND " +
+                    $"phone = \"{phone_add.Text}\" AND " +
+                    $"position = \"{position_add.Text}\" AND " +
+                    $"office_id = (SELECT office.id FROM office WHERE " +
+                    $"office.address = \"{office_add.Text}\")";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Филиал с таким кодом уже есть", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    clear_add_Click(sender, e);
+                    MessageBox.Show("Такой сотрудник уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    clear_btn(sender, e);
                 }
                 else
                 {
-                    if (Office.AddOffice(address_add.Text, CEO_add.Text, phone_add.Text))
+                    if (Employee.AddEmployee(name_add.Text, address_add.Text, passport_add.Text, phone_add.Text,
+                        position_add.Text, office_add.Text))
                     {
-                        MessageBox.Show("Филиал добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clear_add_Click(sender, e);
-                        Office.GetOffice();
+                        MessageBox.Show("Сотрудник добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear_btn(sender, e);
+                        Employee.GetEmployee();
                     }
                     else
                     {
-                        MessageBox.Show("Филиал не был добавлен!");
+                        MessageBox.Show("Сотрудник не был добавлен!");
                     }
                 }
             }
@@ -142,18 +154,21 @@ namespace TravelAgency.Forms
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (offices.SelectedRows.Count > 0)
+            if (employees.SelectedRows.Count > 0)
             {
-                string address, CEO, phone;
-                foreach(DataGridViewRow row in offices.SelectedRows)
+                string name, address, passport, phone, position, office;
+                foreach(DataGridViewRow row in employees.SelectedRows)
                 {
+                    name = row.Cells["ФИО"].Value.ToString();
                     address = row.Cells["Адрес"].Value.ToString();
-                    CEO = row.Cells["ФИО директора"].Value.ToString();
+                    passport = row.Cells["Паспорт"].Value.ToString();
                     phone = row.Cells["Телефон"].Value.ToString();
-                    Office.DeleteOffice(address, CEO, phone);
+                    position = row.Cells["Должность"].Value.ToString();
+                    office = row.Cells["Адрес работы"].Value.ToString();
+                    Employee.DeleteEmployee(name, address, passport, phone, position, office);
                 }
-                Office.GetOffice();
-                MessageBox.Show($"Все выбранные филиалы успешно удалены!");
+                Employee.GetEmployee();
+                MessageBox.Show($"Все выбранные сотрудники успешно удалены!");
             }
             else
             {
@@ -164,37 +179,48 @@ namespace TravelAgency.Forms
 
         private void editbtn_Click(object sender, EventArgs e)
         {
-            if (address_edit.Text != "" &&
-                CEO_edit.Text != "" &&
-                Office.ValidatePhone(phone_edit.Text))
+            if (name_edit.Text != "" &&
+                address_edit.Text != "" &&
+                Office.ValidatePhone(phone_edit.Text) &&
+                 Employee.ValidatePassport(passport_edit.Text) &&
+                 position_edit.Text != "")
             {
-                string query = $"SELECT id FROM office WHERE address =\"{address_edit.Text}\" AND " +
-                    $"CEO_name = \"{CEO_edit.Text}\" AND phone = \"{phone_edit.Text}\";";
+                string query = $"SELECT id FROM employee WHERE name =  \"{name_edit.Text}\" " +
+                    $"AND address = \"{address_edit.Text}\" " +
+                    $"AND passport = \"{passport_edit.Text}\" AND " +
+                    $"phone = \"{phone_edit.Text}\" AND " +
+                    $"position = \"{position_edit.Text}\" AND " +
+                    $"office_id = (SELECT office.id FROM office WHERE " +
+                    $"office.address = \"{office_edit.Text}\")";
                 DBconnection.msCommand.CommandText = query;
                 Object res = DBconnection.msCommand.ExecuteScalar();
                 if (res != null)
                 {
-                    MessageBox.Show("Такой филиал уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Такой сотрудник уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     clear_edit_Click(sender, e);
                 }
                 else
                 {
                     try
                     {
-                        DataGridViewRow row = offices.SelectedRows[0];
+                        DataGridViewRow row = employees.SelectedRows[0];
+                        string old_name = row.Cells["ФИО"].Value.ToString();
                         string old_address = row.Cells["Адрес"].Value.ToString();
-                        string old_CEO = row.Cells["ФИО директора"].Value.ToString();
                         string old_phone = row.Cells["Телефон"].Value.ToString();
-                        if (Office.EditOffice(old_address, address_edit.Text, old_CEO, CEO_edit.Text, 
-                            old_phone, phone_edit.Text))
+                        string old_passport = row.Cells["Паспорт"].Value.ToString();
+                        string old_position = row.Cells["Должность"].Value.ToString();
+                        string old_office = row.Cells["Адрес работы"].Value.ToString();
+                        if (Employee.EditEmployee(old_name, name_edit.Text, old_address, address_edit.Text,
+                            old_passport, passport_edit.Text, old_phone, phone_edit.Text, 
+                            old_position, position_edit.Text, old_office, office_edit.Text))
                         {
-                            MessageBox.Show("Данные о филиале изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            clear_edit_Click(sender, e);
-                            Office.GetOffice();
+                            MessageBox.Show("Данные о сотруднике изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            name_edit.Text = "";
+                            Employee.GetEmployee();
                         }
                         else
                         {
-                            MessageBox.Show("Данные о филиале не были изменены!");
+                            MessageBox.Show("Данные о сотруднике не были изменены!");
                         }
                     }
                     catch
@@ -214,18 +240,24 @@ namespace TravelAgency.Forms
 
         }
 
-        private void clear_add_Click(object sender, EventArgs e)
+        private void clear_btn(object sender, EventArgs e)
         {
+            name_add.Text = "";
             address_add.Text = "";
-            CEO_add.Text = "";
+            passport_add.Text = "";
             phone_add.Text = "";
+            office_add.Text = "";
+            position_add.Text = "";
         }
 
         private void clear_edit_Click(object sender, EventArgs e)
         {
+            name_edit.Text = "";
             address_edit.Text = "";
-            CEO_edit.Text = "";
+            passport_edit.Text = "";
             phone_edit.Text = "";
+            office_add.Text = "";
+            position_add.Text = "";
         }
     }
 }
