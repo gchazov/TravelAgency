@@ -99,6 +99,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBconnection.cs" />
+    <Compile Include="Forms\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OfficeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OfficeForm.Designer.cs">
+      <DependentUpon>OfficeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HotelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,9 +144,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\Airport.cs" />
+    <Compile Include="Tables\Client.cs" />
+    <Compile Include="Tables\Office.cs" />
     <Compile Include="Tables\Hotel.cs" />
     <Compile Include="Tables\City.cs" />
     <Compile Include="Tables\Country.cs" />
+    <EmbeddedResource Include="Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OfficeForm.resx">
+      <DependentUpon>OfficeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HotelForm.resx">
       <DependentUpon>HotelForm.cs</DependentUpon>
     </EmbeddedResource>

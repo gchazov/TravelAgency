@@ -55,5 +55,19 @@ namespace TravelAgency
             HotelForm hf = new HotelForm();
             hf.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OfficeForm of = new OfficeForm();
+            of.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientForm cf = new ClientForm();
+            cf.Show();
+        }
     }
 }

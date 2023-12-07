@@ -1,6 +1,6 @@
 ﻿namespace TravelAgency.Forms
 {
-    partial class HotelForm
+    partial class ClientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,102 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hotels = new System.Windows.Forms.DataGridView();
+            this.clients = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_add = new System.Windows.Forms.Button();
+            this.passport_add = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.phone_add = new System.Windows.Forms.TextBox();
+            this.address_add = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.stars_add = new System.Windows.Forms.ComboBox();
-            this.addCity = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.canceladditbtn = new System.Windows.Forms.Button();
             this.addbtn = new System.Windows.Forms.Button();
-            this.name_field_add = new System.Windows.Forms.TextBox();
+            this.name_add = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.name_field_edit = new System.Windows.Forms.TextBox();
+            this.name_edit = new System.Windows.Forms.TextBox();
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear_edit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.passport_edit = new System.Windows.Forms.TextBox();
+            this.phone_edit = new System.Windows.Forms.TextBox();
+            this.address_edit = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.stars_edit = new System.Windows.Forms.ComboBox();
-            this.editCity = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.hotels)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clients)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // hotels
+            // clients
             // 
-            this.hotels.AllowUserToAddRows = false;
-            this.hotels.AllowUserToDeleteRows = false;
-            this.hotels.AllowUserToResizeColumns = false;
-            this.hotels.AllowUserToResizeRows = false;
-            this.hotels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.hotels.BackgroundColor = System.Drawing.Color.LemonChiffon;
-            this.hotels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hotels.Location = new System.Drawing.Point(17, 50);
-            this.hotels.Margin = new System.Windows.Forms.Padding(4);
-            this.hotels.Name = "hotels";
-            this.hotels.ReadOnly = true;
-            this.hotels.RowHeadersWidth = 51;
-            this.hotels.RowTemplate.Height = 24;
-            this.hotels.Size = new System.Drawing.Size(596, 220);
-            this.hotels.TabIndex = 0;
+            this.clients.AllowUserToAddRows = false;
+            this.clients.AllowUserToDeleteRows = false;
+            this.clients.AllowUserToResizeColumns = false;
+            this.clients.AllowUserToResizeRows = false;
+            this.clients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.clients.BackgroundColor = System.Drawing.Color.LightCyan;
+            this.clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clients.Location = new System.Drawing.Point(17, 50);
+            this.clients.Margin = new System.Windows.Forms.Padding(4);
+            this.clients.Name = "clients";
+            this.clients.ReadOnly = true;
+            this.clients.RowHeadersWidth = 51;
+            this.clients.RowTemplate.Height = 24;
+            this.clients.Size = new System.Drawing.Size(772, 220);
+            this.clients.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.clear_add);
+            this.groupBox1.Controls.Add(this.passport_add);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.phone_add);
+            this.groupBox1.Controls.Add(this.address_add);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.stars_add);
-            this.groupBox1.Controls.Add(this.addCity);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.canceladditbtn);
             this.groupBox1.Controls.Add(this.addbtn);
-            this.groupBox1.Controls.Add(this.name_field_add);
+            this.groupBox1.Controls.Add(this.name_add);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 8);
+            this.groupBox1.Location = new System.Drawing.Point(36, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(263, 291);
+            this.groupBox1.Size = new System.Drawing.Size(327, 342);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // clear_add
+            // 
+            this.clear_add.BackColor = System.Drawing.Color.Violet;
+            this.clear_add.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_add.Location = new System.Drawing.Point(210, 301);
+            this.clear_add.Name = "clear_add";
+            this.clear_add.Size = new System.Drawing.Size(95, 38);
+            this.clear_add.TabIndex = 13;
+            this.clear_add.Text = "Очистить";
+            this.clear_add.UseVisualStyleBackColor = false;
+            this.clear_add.Click += new System.EventHandler(this.clear_btn);
+            // 
+            // passport_add
+            // 
+            this.passport_add.Location = new System.Drawing.Point(11, 197);
+            this.passport_add.MaxLength = 45;
+            this.passport_add.Name = "passport_add";
+            this.passport_add.Size = new System.Drawing.Size(264, 36);
+            this.passport_add.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(7, 172);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(177, 22);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Введите паспорт:";
+            // 
+            // phone_add
+            // 
+            this.phone_add.Location = new System.Drawing.Point(10, 259);
+            this.phone_add.MaxLength = 11;
+            this.phone_add.Name = "phone_add";
+            this.phone_add.Size = new System.Drawing.Size(179, 36);
+            this.phone_add.TabIndex = 8;
+            // 
+            // address_add
+            // 
+            this.address_add.Location = new System.Drawing.Point(10, 130);
+            this.address_add.MaxLength = 45;
+            this.address_add.Name = "address_add";
+            this.address_add.Size = new System.Drawing.Size(264, 36);
+            this.address_add.TabIndex = 6;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(7, 181);
+            this.label4.Location = new System.Drawing.Point(7, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 22);
+            this.label4.Size = new System.Drawing.Size(182, 22);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Выберите кол-во звёзд:";
-            // 
-            // stars_add
-            // 
-            this.stars_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stars_add.FormattingEnabled = true;
-            this.stars_add.Location = new System.Drawing.Point(10, 206);
-            this.stars_add.Name = "stars_add";
-            this.stars_add.Size = new System.Drawing.Size(247, 35);
-            this.stars_add.TabIndex = 10;
-            // 
-            // addCity
-            // 
-            this.addCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.addCity.FormattingEnabled = true;
-            this.addCity.Location = new System.Drawing.Point(10, 131);
-            this.addCity.Name = "addCity";
-            this.addCity.Size = new System.Drawing.Size(247, 35);
-            this.addCity.TabIndex = 9;
+            this.label4.Text = "Введите телефон:";
             // 
             // label1
             // 
@@ -131,18 +168,18 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 22);
+            this.label1.Size = new System.Drawing.Size(143, 22);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Введите название: ";
+            this.label1.Text = "Введите ФИО: ";
             // 
             // canceladditbtn
             // 
             this.canceladditbtn.BackColor = System.Drawing.Color.Crimson;
             this.canceladditbtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.canceladditbtn.Location = new System.Drawing.Point(109, 247);
+            this.canceladditbtn.Location = new System.Drawing.Point(109, 301);
             this.canceladditbtn.Name = "canceladditbtn";
             this.canceladditbtn.Size = new System.Drawing.Size(95, 38);
-            this.canceladditbtn.TabIndex = 8;
+            this.canceladditbtn.TabIndex = 10;
             this.canceladditbtn.Text = "Отменить";
             this.canceladditbtn.UseVisualStyleBackColor = false;
             this.canceladditbtn.Click += new System.EventHandler(this.canceladditbtn_Click);
@@ -151,21 +188,21 @@
             // 
             this.addbtn.BackColor = System.Drawing.Color.Lime;
             this.addbtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addbtn.Location = new System.Drawing.Point(11, 247);
+            this.addbtn.Location = new System.Drawing.Point(11, 301);
             this.addbtn.Name = "addbtn";
             this.addbtn.Size = new System.Drawing.Size(95, 38);
-            this.addbtn.TabIndex = 7;
+            this.addbtn.TabIndex = 9;
             this.addbtn.Text = "Добавить";
             this.addbtn.UseVisualStyleBackColor = false;
             this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
             // 
-            // name_field_add
+            // name_add
             // 
-            this.name_field_add.Location = new System.Drawing.Point(10, 57);
-            this.name_field_add.MaxLength = 20;
-            this.name_field_add.Name = "name_field_add";
-            this.name_field_add.Size = new System.Drawing.Size(247, 36);
-            this.name_field_add.TabIndex = 6;
+            this.name_add.Location = new System.Drawing.Point(10, 57);
+            this.name_add.MaxLength = 45;
+            this.name_add.Name = "name_add";
+            this.name_add.Size = new System.Drawing.Size(264, 36);
+            this.name_add.TabIndex = 5;
             // 
             // label2
             // 
@@ -173,47 +210,47 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 22);
+            this.label2.Size = new System.Drawing.Size(157, 22);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Выберите город:";
+            this.label2.Text = "Введите адрес:";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(635, 50);
+            this.button1.Location = new System.Drawing.Point(820, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 54);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить отель";
+            this.button1.Text = "Добавить клиента";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(635, 110);
+            this.button2.Location = new System.Drawing.Point(820, 110);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 54);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранный";
+            this.button2.Text = "Редактировать выбранного";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(635, 170);
+            this.button3.Location = new System.Drawing.Point(820, 170);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранный";
+            this.button3.Text = "Удалить выбранного";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Pink;
-            this.button4.Location = new System.Drawing.Point(635, 230);
+            this.button4.Location = new System.Drawing.Point(820, 230);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(136, 40);
             this.button4.TabIndex = 4;
@@ -227,26 +264,26 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 22);
+            this.label5.Size = new System.Drawing.Size(157, 22);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Выберите город:";
+            this.label5.Text = "Введите адрес:";
             // 
-            // name_field_edit
+            // name_edit
             // 
-            this.name_field_edit.Location = new System.Drawing.Point(10, 57);
-            this.name_field_edit.MaxLength = 20;
-            this.name_field_edit.Name = "name_field_edit";
-            this.name_field_edit.Size = new System.Drawing.Size(264, 36);
-            this.name_field_edit.TabIndex = 10;
+            this.name_edit.Location = new System.Drawing.Point(10, 57);
+            this.name_edit.MaxLength = 45;
+            this.name_edit.Name = "name_edit";
+            this.name_edit.Size = new System.Drawing.Size(264, 36);
+            this.name_edit.TabIndex = 11;
             // 
             // editbtn
             // 
             this.editbtn.BackColor = System.Drawing.Color.Orange;
             this.editbtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.editbtn.Location = new System.Drawing.Point(9, 247);
+            this.editbtn.Location = new System.Drawing.Point(9, 300);
             this.editbtn.Name = "editbtn";
             this.editbtn.Size = new System.Drawing.Size(95, 38);
-            this.editbtn.TabIndex = 11;
+            this.editbtn.TabIndex = 15;
             this.editbtn.Text = "Изменить";
             this.editbtn.UseVisualStyleBackColor = false;
             this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
@@ -255,59 +292,90 @@
             // 
             this.canceleditbtn.BackColor = System.Drawing.Color.Crimson;
             this.canceleditbtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.canceleditbtn.Location = new System.Drawing.Point(110, 247);
+            this.canceleditbtn.Location = new System.Drawing.Point(110, 300);
             this.canceleditbtn.Name = "canceleditbtn";
             this.canceleditbtn.Size = new System.Drawing.Size(95, 38);
-            this.canceleditbtn.TabIndex = 12;
+            this.canceleditbtn.TabIndex = 16;
             this.canceleditbtn.Text = "Отменить";
             this.canceleditbtn.UseVisualStyleBackColor = false;
             this.canceleditbtn.Click += new System.EventHandler(this.canceleditbtn_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.clear_edit);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.passport_edit);
+            this.groupBox2.Controls.Add(this.phone_edit);
+            this.groupBox2.Controls.Add(this.address_edit);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.stars_edit);
-            this.groupBox2.Controls.Add(this.editCity);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.canceleditbtn);
             this.groupBox2.Controls.Add(this.editbtn);
-            this.groupBox2.Controls.Add(this.name_field_edit);
+            this.groupBox2.Controls.Add(this.name_edit);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(424, 8);
+            this.groupBox2.Location = new System.Drawing.Point(581, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(281, 291);
+            this.groupBox2.Size = new System.Drawing.Size(327, 342);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
+            // 
+            // clear_edit
+            // 
+            this.clear_edit.BackColor = System.Drawing.Color.Violet;
+            this.clear_edit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_edit.Location = new System.Drawing.Point(211, 301);
+            this.clear_edit.Name = "clear_edit";
+            this.clear_edit.Size = new System.Drawing.Size(95, 38);
+            this.clear_edit.TabIndex = 14;
+            this.clear_edit.Text = "Очистить";
+            this.clear_edit.UseVisualStyleBackColor = false;
+            this.clear_edit.Click += new System.EventHandler(this.clear_edit_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(6, 172);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(177, 22);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Введите паспорт:";
+            // 
+            // passport_edit
+            // 
+            this.passport_edit.Location = new System.Drawing.Point(10, 197);
+            this.passport_edit.MaxLength = 45;
+            this.passport_edit.Name = "passport_edit";
+            this.passport_edit.Size = new System.Drawing.Size(264, 36);
+            this.passport_edit.TabIndex = 13;
+            // 
+            // phone_edit
+            // 
+            this.phone_edit.Location = new System.Drawing.Point(10, 259);
+            this.phone_edit.MaxLength = 11;
+            this.phone_edit.Name = "phone_edit";
+            this.phone_edit.Size = new System.Drawing.Size(179, 36);
+            this.phone_edit.TabIndex = 14;
+            // 
+            // address_edit
+            // 
+            this.address_edit.Location = new System.Drawing.Point(10, 130);
+            this.address_edit.MaxLength = 45;
+            this.address_edit.Name = "address_edit";
+            this.address_edit.Size = new System.Drawing.Size(264, 36);
+            this.address_edit.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 181);
+            this.label6.Location = new System.Drawing.Point(6, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 22);
+            this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Выберите кол-во звёзд:";
-            // 
-            // stars_edit
-            // 
-            this.stars_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stars_edit.FormattingEnabled = true;
-            this.stars_edit.Location = new System.Drawing.Point(10, 206);
-            this.stars_edit.Name = "stars_edit";
-            this.stars_edit.Size = new System.Drawing.Size(247, 35);
-            this.stars_edit.TabIndex = 11;
-            // 
-            // editCity
-            // 
-            this.editCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.editCity.FormattingEnabled = true;
-            this.editCity.Location = new System.Drawing.Point(10, 130);
-            this.editCity.Name = "editCity";
-            this.editCity.Size = new System.Drawing.Size(247, 35);
-            this.editCity.TabIndex = 10;
+            this.label6.Text = "Введите телефон:";
             // 
             // label3
             // 
@@ -315,9 +383,9 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(184, 22);
+            this.label3.Size = new System.Drawing.Size(138, 22);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Введите название:";
+            this.label3.Text = "Введите ФИО:";
             // 
             // label7
             // 
@@ -326,41 +394,41 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(268, 37);
+            this.label7.Size = new System.Drawing.Size(303, 37);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Таблица \"Отели\"";
+            this.label7.Text = "Таблица \"Клиенты\"";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
+            this.panel1.BackColor = System.Drawing.Color.LightCyan;
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Location = new System.Drawing.Point(17, 286);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(754, 316);
+            this.panel1.Size = new System.Drawing.Size(939, 371);
             this.panel1.TabIndex = 8;
             // 
-            // HotelForm
+            // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(800, 278);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(973, 279);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.hotels);
+            this.Controls.Add(this.clients);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "HotelForm";
+            this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Отели";
-            this.Load += new System.EventHandler(this.HotelForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hotels)).EndInit();
+            this.Text = "Клиенты";
+            this.Load += new System.EventHandler(this.ClientForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clients)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -373,18 +441,18 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView hotels;
+        private System.Windows.Forms.DataGridView clients;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button canceladditbtn;
         private System.Windows.Forms.Button addbtn;
-        private System.Windows.Forms.TextBox name_field_add;
+        private System.Windows.Forms.TextBox name_add;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox name_field_edit;
+        private System.Windows.Forms.TextBox name_edit;
         private System.Windows.Forms.Button editbtn;
         private System.Windows.Forms.Button canceleditbtn;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -392,11 +460,17 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox addCity;
-        private System.Windows.Forms.ComboBox editCity;
-        private System.Windows.Forms.ComboBox stars_add;
-        private System.Windows.Forms.ComboBox stars_edit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox phone_add;
+        private System.Windows.Forms.TextBox address_add;
+        private System.Windows.Forms.TextBox phone_edit;
+        private System.Windows.Forms.TextBox address_edit;
+        private System.Windows.Forms.TextBox passport_add;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox passport_edit;
+        private System.Windows.Forms.Button clear_add;
+        private System.Windows.Forms.Button clear_edit;
     }
 }
