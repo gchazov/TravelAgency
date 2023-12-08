@@ -76,5 +76,12 @@ namespace TravelAgency
             EmployeeForm ef = new EmployeeForm();
             ef.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TourForm tf = new TourForm();
+            tf.Show();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace TravelAgency
     // Подключение к БД
     internal class DBconnection
     {
-        static string connectionString = "server=localhost; user=test_user; password=root123; database=travel_agency";
+        public static string connectionString = "server=localhost; user=test_user; password=root123; database=travel_agency";
         static public MySqlDataAdapter msDataAdapter;
         static MySqlConnection myConnection;
         static public MySqlCommand msCommand;

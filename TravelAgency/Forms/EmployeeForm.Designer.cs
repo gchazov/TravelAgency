@@ -30,6 +30,10 @@
         {
             this.employees = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.office_add = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.position_add = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.clear_add = new System.Windows.Forms.Button();
             this.passport_add = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,6 +54,10 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.office_edit = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.position_edit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.clear_edit = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.passport_edit = new System.Windows.Forms.TextBox();
@@ -59,14 +67,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.position_add = new System.Windows.Forms.TextBox();
-            this.position_edit = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.office_add = new System.Windows.Forms.ComboBox();
-            this.office_edit = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employees)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,6 +117,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // office_add
+            // 
+            this.office_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.office_add.FormattingEnabled = true;
+            this.office_add.Location = new System.Drawing.Point(9, 346);
+            this.office_add.Name = "office_add";
+            this.office_add.Size = new System.Drawing.Size(263, 30);
+            this.office_add.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(5, 321);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(250, 22);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Выберите адрес работы:";
+            // 
+            // position_add
+            // 
+            this.position_add.Location = new System.Drawing.Point(10, 288);
+            this.position_add.MaxLength = 45;
+            this.position_add.Name = "position_add";
+            this.position_add.Size = new System.Drawing.Size(264, 30);
+            this.position_add.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(6, 263);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(204, 22);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Введите должность: ";
             // 
             // clear_add
             // 
@@ -233,7 +270,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 54);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить клиента";
+            this.button1.Text = "Добавить сотркдника";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -337,6 +374,43 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
+            // office_edit
+            // 
+            this.office_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.office_edit.FormattingEnabled = true;
+            this.office_edit.Location = new System.Drawing.Point(9, 346);
+            this.office_edit.Name = "office_edit";
+            this.office_edit.Size = new System.Drawing.Size(263, 30);
+            this.office_edit.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(6, 321);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(250, 22);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Выберите адрес работы:";
+            // 
+            // position_edit
+            // 
+            this.position_edit.Location = new System.Drawing.Point(10, 289);
+            this.position_edit.MaxLength = 45;
+            this.position_edit.Name = "position_edit";
+            this.position_edit.Size = new System.Drawing.Size(264, 30);
+            this.position_edit.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(6, 264);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(204, 22);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Введите должность: ";
+            // 
             // clear_edit
             // 
             this.clear_edit.BackColor = System.Drawing.Color.Violet;
@@ -423,80 +497,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 453);
             this.panel1.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(6, 263);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(204, 22);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Введите должность: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(6, 264);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(204, 22);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Введите должность: ";
-            // 
-            // position_add
-            // 
-            this.position_add.Location = new System.Drawing.Point(10, 288);
-            this.position_add.MaxLength = 45;
-            this.position_add.Name = "position_add";
-            this.position_add.Size = new System.Drawing.Size(264, 30);
-            this.position_add.TabIndex = 9;
-            // 
-            // position_edit
-            // 
-            this.position_edit.Location = new System.Drawing.Point(10, 289);
-            this.position_edit.MaxLength = 45;
-            this.position_edit.Name = "position_edit";
-            this.position_edit.Size = new System.Drawing.Size(264, 30);
-            this.position_edit.TabIndex = 18;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(5, 321);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(250, 22);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Выберите адрес работы:";
-            // 
-            // office_add
-            // 
-            this.office_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.office_add.FormattingEnabled = true;
-            this.office_add.Location = new System.Drawing.Point(9, 346);
-            this.office_add.Name = "office_add";
-            this.office_add.Size = new System.Drawing.Size(263, 30);
-            this.office_add.TabIndex = 10;
-            // 
-            // office_edit
-            // 
-            this.office_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.office_edit.FormattingEnabled = true;
-            this.office_edit.Location = new System.Drawing.Point(9, 346);
-            this.office_edit.Name = "office_edit";
-            this.office_edit.Size = new System.Drawing.Size(263, 30);
-            this.office_edit.TabIndex = 19;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(6, 321);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(250, 22);
-            this.label13.TabIndex = 18;
-            this.label13.Text = "Выберите адрес работы:";
             // 
             // EmployeeForm
             // 
