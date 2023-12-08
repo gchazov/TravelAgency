@@ -83,5 +83,12 @@ namespace TravelAgency
             TourForm tf = new TourForm();
             tf.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FlightForm ff = new FlightForm();
+            ff.Show();
+        }
     }
 }
