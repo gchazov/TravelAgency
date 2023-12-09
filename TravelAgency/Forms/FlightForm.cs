@@ -186,13 +186,28 @@ namespace TravelAgency.Forms
                 foreach (DataGridViewRow row in flights.SelectedRows)
                 {
                     id = row.Cells["Код рейса"].Value.ToString();
-                    
-
-                    date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(), 
+                    try
+                    {
+                        date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(),
                         "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                    }
+                    catch
+                    {
+                        date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(),
+                        "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                    }
 
-                    date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
+
+                    try
+                    {
+                        date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
                         "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                    }
+                    catch
+                    {
+                        date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
+                        "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                    }
 
                     airport_from = row.Cells["Аэропорт вылета"].Value.ToString();
                     airport_to = row.Cells["Аэропорт прибытия"].Value.ToString();
@@ -247,12 +262,26 @@ namespace TravelAgency.Forms
 
                         id = row.Cells["Код рейса"].Value.ToString();
 
-
-                        date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(),
-                            "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
-
-                        date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
-                            "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                        try
+                        {
+                            date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(),
+                                "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                        }
+                        catch
+                        {
+                            date_dep = DateTime.ParseExact(row.Cells["Дата и время вылета"].Value.ToString(),
+                                "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                        }
+                        try
+                        {
+                            date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
+                                "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                        }
+                        catch
+                        {
+                            date_arr = DateTime.ParseExact(row.Cells["Дата и время прибытия"].Value.ToString(),
+                                "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd HH:mm") + ":00";
+                        }
 
                         airport_from = row.Cells["Аэропорт вылета"].Value.ToString();
                         airport_to = row.Cells["Аэропорт прибытия"].Value.ToString();

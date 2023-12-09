@@ -90,5 +90,12 @@ namespace TravelAgency
             FlightForm ff = new FlightForm();
             ff.Show();
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ContractForm cf = new ContractForm();
+            cf.Show();
+        }
     }
 }
