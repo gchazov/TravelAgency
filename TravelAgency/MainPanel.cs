@@ -125,7 +125,9 @@ namespace TravelAgency
 
         private void button15_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AvgOfficeForm aof = new AvgOfficeForm();
+            aof.Show();
         }
     }
 }
