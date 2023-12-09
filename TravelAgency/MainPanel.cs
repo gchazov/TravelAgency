@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Forms;
+using TravelAgency.Queries;
 
 namespace TravelAgency
 {
@@ -28,13 +29,14 @@ namespace TravelAgency
         private void MainPanel_Load(object sender, EventArgs e)
         {
             DBconnection.Connect();
+            label3.Text = "Вы авторизованы как " + DBconnection.login;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            CountryForm af = new CountryForm();
-            af.Show();
+            CountryForm cf = new CountryForm();
+            cf.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -46,7 +48,9 @@ namespace TravelAgency
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            this.Hide();
+            Auth auth = new Auth();
+            auth.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -96,6 +100,32 @@ namespace TravelAgency
             this.Hide();
             ContractForm cf = new ContractForm();
             cf.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SoldToursForm sff = new SoldToursForm();
+            sff.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ByersMoreAvgForm bmaf = new ByersMoreAvgForm();
+            bmaf.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PermForm pf = new PermForm();
+            pf.Show();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

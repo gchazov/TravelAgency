@@ -12,7 +12,8 @@ namespace TravelAgency
     // Подключение к БД
     internal class DBconnection
     {
-        public static string connectionString = "server=localhost; user=test_user; password=root123; database=travel_agency";
+        public static string login, pass;
+        public static string connectionString;
         static public MySqlDataAdapter msDataAdapter;
         static MySqlConnection myConnection;
         static public MySqlCommand msCommand;
@@ -21,6 +22,7 @@ namespace TravelAgency
         {
             try
             {
+                connectionString = $"server=localhost; user={login}; password={pass}; database=travel_agency";
                 myConnection = new MySqlConnection(connectionString);
                 myConnection.Open();
                 msCommand = new MySqlCommand();
@@ -30,7 +32,6 @@ namespace TravelAgency
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
