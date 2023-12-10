@@ -30,6 +30,7 @@
         {
             this.hotels = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clear_add = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.stars_add = new System.Windows.Forms.ComboBox();
             this.addCity = new System.Windows.Forms.ComboBox();
@@ -47,14 +48,13 @@
             this.editbtn = new System.Windows.Forms.Button();
             this.canceleditbtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.clear_edit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.stars_edit = new System.Windows.Forms.ComboBox();
             this.editCity = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.clear_add = new System.Windows.Forms.Button();
-            this.clear_edit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hotels)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,6 +99,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // clear_add
+            // 
+            this.clear_add.BackColor = System.Drawing.Color.Violet;
+            this.clear_add.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_add.Location = new System.Drawing.Point(210, 247);
+            this.clear_add.Name = "clear_add";
+            this.clear_add.Size = new System.Drawing.Size(95, 38);
+            this.clear_add.TabIndex = 10;
+            this.clear_add.Text = "Очистить";
+            this.clear_add.UseVisualStyleBackColor = false;
+            this.clear_add.Click += new System.EventHandler(this.clear_add_Click);
             // 
             // label4
             // 
@@ -285,6 +297,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
+            // clear_edit
+            // 
+            this.clear_edit.BackColor = System.Drawing.Color.Violet;
+            this.clear_edit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_edit.Location = new System.Drawing.Point(211, 247);
+            this.clear_edit.Name = "clear_edit";
+            this.clear_edit.Size = new System.Drawing.Size(95, 38);
+            this.clear_edit.TabIndex = 16;
+            this.clear_edit.Text = "Очистить";
+            this.clear_edit.UseVisualStyleBackColor = false;
+            this.clear_edit.Click += new System.EventHandler(this.clear_edit_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -344,36 +368,12 @@
             this.panel1.Size = new System.Drawing.Size(754, 316);
             this.panel1.TabIndex = 8;
             // 
-            // clear_add
-            // 
-            this.clear_add.BackColor = System.Drawing.Color.Violet;
-            this.clear_add.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clear_add.Location = new System.Drawing.Point(210, 247);
-            this.clear_add.Name = "clear_add";
-            this.clear_add.Size = new System.Drawing.Size(95, 38);
-            this.clear_add.TabIndex = 10;
-            this.clear_add.Text = "Очистить";
-            this.clear_add.UseVisualStyleBackColor = false;
-            this.clear_add.Click += new System.EventHandler(this.clear_add_Click);
-            // 
-            // clear_edit
-            // 
-            this.clear_edit.BackColor = System.Drawing.Color.Violet;
-            this.clear_edit.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clear_edit.Location = new System.Drawing.Point(211, 247);
-            this.clear_edit.Name = "clear_edit";
-            this.clear_edit.Size = new System.Drawing.Size(95, 38);
-            this.clear_edit.TabIndex = 16;
-            this.clear_edit.Text = "Очистить";
-            this.clear_edit.UseVisualStyleBackColor = false;
-            this.clear_edit.Click += new System.EventHandler(this.clear_edit_Click);
-            // 
             // HotelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(800, 617);
+            this.ClientSize = new System.Drawing.Size(800, 281);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

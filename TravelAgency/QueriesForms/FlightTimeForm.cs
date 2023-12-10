@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TravelAgency.Queries
 {
-    public partial class PermForm : Form
+    public partial class FlightTimeForm : Form
     {
-        public PermForm()
+        public FlightTimeForm()
         {
             InitializeComponent();
         }
@@ -26,8 +26,8 @@ namespace TravelAgency.Queries
 
         private void PermForm_Load(object sender, EventArgs e)
         {
-            Perm.GetPerm();
-            display.DataSource = Perm.dtTours;
+            FlightTime.GetFlightTime();
+            display.DataSource = FlightTime.dtTours;
         }
     }
 }

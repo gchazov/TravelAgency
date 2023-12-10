@@ -1,6 +1,6 @@
 ﻿namespace TravelAgency.Queries
 {
-    partial class AvgOfficeForm
+    partial class OfficeAvgForm
     {
         /// <summary>
         /// Required designer variable.
@@ -49,13 +49,13 @@
             this.display.ReadOnly = true;
             this.display.RowHeadersWidth = 51;
             this.display.RowTemplate.Height = 24;
-            this.display.Size = new System.Drawing.Size(591, 181);
+            this.display.Size = new System.Drawing.Size(564, 181);
             this.display.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(482, 269);
+            this.button1.Location = new System.Drawing.Point(455, 270);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 50);
@@ -68,28 +68,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(117, 9);
+            this.label1.Location = new System.Drawing.Point(49, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(407, 39);
+            this.label1.Size = new System.Drawing.Size(568, 39);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Среднее по филиалам";
+            this.label1.Text = "Средние продажи по филиалам";
             // 
-            // AvgOfficeForm
+            // OfficeAvgForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(645, 330);
+            this.ClientSize = new System.Drawing.Size(603, 333);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.display);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AvgOfficeForm";
+            this.Name = "OfficeAvgForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Средние продажи";
-            this.Load += new System.EventHandler(this.AvgOfficeForm_Load);
+            this.Load += new System.EventHandler(this.PermForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.display)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

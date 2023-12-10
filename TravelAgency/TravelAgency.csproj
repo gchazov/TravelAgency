@@ -179,17 +179,23 @@
     <Compile Include="QueriesForms\ByersMoreAvgForm.Designer.cs">
       <DependentUpon>ByersMoreAvgForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="QueriesForms\FlightTimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForms\FlightTimeForm.Designer.cs">
+      <DependentUpon>FlightTimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QueriesForms\OfficeAvgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QueriesForms\OfficeAvgForm.Designer.cs">
+      <DependentUpon>OfficeAvgForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueriesForms\PermForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QueriesForms\PermForm.Designer.cs">
       <DependentUpon>PermForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QueriesForms\AvgOfficeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QueriesForms\AvgOfficeForm.Designer.cs">
-      <DependentUpon>AvgOfficeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="QueriesForms\SoldToursForm.cs">
       <SubType>Form</SubType>
@@ -198,8 +204,9 @@
       <DependentUpon>SoldToursForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Queries\ByersMoreAvg.cs" />
+    <Compile Include="Queries\FlightTime.cs" />
+    <Compile Include="Queries\OfficeAvg.cs" />
     <Compile Include="Queries\Perm.cs" />
-    <Compile Include="Queries\AvgOffice.cs" />
     <Compile Include="Queries\SoldTours.cs" />
     <Compile Include="Tables\Airport.cs" />
     <Compile Include="Tables\Contract.cs" />
@@ -259,11 +266,14 @@
     <EmbeddedResource Include="QueriesForms\ByersMoreAvgForm.resx">
       <DependentUpon>ByersMoreAvgForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QueriesForms\FlightTimeForm.resx">
+      <DependentUpon>FlightTimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QueriesForms\OfficeAvgForm.resx">
+      <DependentUpon>OfficeAvgForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QueriesForms\PermForm.resx">
       <DependentUpon>PermForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QueriesForms\AvgOfficeForm.resx">
-      <DependentUpon>AvgOfficeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QueriesForms\SoldToursForm.resx">
       <DependentUpon>SoldToursForm.cs</DependentUpon>

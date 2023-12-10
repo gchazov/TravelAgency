@@ -11,7 +11,7 @@ namespace TravelAgency.Queries
     internal class Perm
     {
         static public DataTable dtTours = new DataTable();
-        static public void GetSoldTours()
+        static public void GetPerm()
         {
             try
             {

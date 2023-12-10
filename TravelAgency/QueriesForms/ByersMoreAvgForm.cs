@@ -24,10 +24,12 @@ namespace TravelAgency.Queries
             mp.Show();
         }
 
-        private void SoldToursForm_Load(object sender, EventArgs e)
+        
+
+        private void ByersMoreAvgForm_Load(object sender, EventArgs e)
         {
-            SoldTours.GetSoldTours();
-            display.DataSource = SoldTours.dtTours;
+            ByersMoreAvg.GetSoldTours();
+            display.DataSource = ByersMoreAvg.dtTours;
         }
     }
 }

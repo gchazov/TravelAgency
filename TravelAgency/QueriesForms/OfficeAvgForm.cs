@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TravelAgency.Queries
 {
-    public partial class AvgOfficeForm : Form
+    public partial class OfficeAvgForm : Form
     {
-        public AvgOfficeForm()
+        public OfficeAvgForm()
         {
             InitializeComponent();
         }
@@ -24,10 +24,10 @@ namespace TravelAgency.Queries
             mp.Show();
         }
 
-        private void AvgOfficeForm_Load(object sender, EventArgs e)
+        private void PermForm_Load(object sender, EventArgs e)
         {
-            AvgOffice.GetSoldTours();
-            display.DataSource = AvgOffice.dtAvg;
+            OfficeAvg.GetAvg();
+            display.DataSource = OfficeAvg.dtTours;
         }
     }
 }

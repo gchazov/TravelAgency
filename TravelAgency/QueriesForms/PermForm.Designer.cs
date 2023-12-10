@@ -89,7 +89,7 @@
             this.Name = "PermForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Страны, куда летают пермяки зимой";
-            this.Load += new System.EventHandler(this.SoldToursForm_Load);
+            this.Load += new System.EventHandler(this.PermForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.display)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
