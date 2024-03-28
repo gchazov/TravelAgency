@@ -1,14 +1,18 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Forms;
 using TravelAgency.Queries;
+using OfficeOpenXml;
 
 namespace TravelAgency
 {
@@ -136,5 +140,122 @@ namespace TravelAgency
             FlightTimeForm ftf = new FlightTimeForm();
             ftf.Show();
         }
+
+        private void MainPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        public static void ExportToPDF(DataGridView dataGridView, string filePath)
+        {
+            Document doc = new Document(PageSize.A4);
+
+            try
+            {
+                PdfWriter.GetInstance(doc, new FileStream(filePath, FileMode.Create));
+                doc.Open();
+
+                BaseFont baseFont = BaseFont.CreateFont(@"C:\Windows\Fonts\Arial.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+                iTextSharp.text.Font boldFont = new iTextSharp.text.Font(baseFont, 9, iTextSharp.text.Font.BOLD);
+                iTextSharp.text.Font regularFont = new iTextSharp.text.Font(baseFont, 7, iTextSharp.text.Font.NORMAL);
+
+
+                PdfPTable pdfTable = new PdfPTable(dataGridView.Columns.Count);
+                pdfTable.DefaultCell.Padding = 3;
+                pdfTable.WidthPercentage = 100;
+                pdfTable.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                PdfPCell headerCell = new PdfPCell(new Phrase("Туры", boldFont));
+                headerCell.Colspan = dataGridView.Columns.Count;
+                headerCell.NoWrap = true;
+                headerCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pdfTable.AddCell(headerCell);
+
+                string dateTimeText = "Отчёт от " + DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+                PdfPCell dateCell = new PdfPCell(new Phrase(dateTimeText, regularFont));
+                dateCell.Colspan = dataGridView.Columns.Count;
+                dateCell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pdfTable.AddCell(dateCell);
+
+                foreach (DataGridViewColumn column in dataGridView.Columns)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, boldFont));
+                    pdfTable.AddCell(cell);
+                }
+
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        PdfPCell cellPdf = new PdfPCell(new Phrase(cell.Value?.ToString() ?? "", regularFont));
+                        pdfTable.AddCell(cellPdf);
+                    }
+                }
+                pdfTable.CompleteRow();
+
+                doc.Add(pdfTable);
+                MessageBox.Show("Данные успешно экспортированы в PDF.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Произошла непрведвиденная ошибка, попробуйте снова!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                doc.Close();
+            }
+        }
+
+        public static void ExportToExcel(DataGridView dataGridView, string filePath)
+        {
+            try
+            {
+                using (ExcelPackage excelPackage = new ExcelPackage())
+                {
+                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Tours");
+
+                    worksheet.Cells["A1"].Value = "Отчёт от " + DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
+                    worksheet.Cells["A1"].Style.Font.Bold = true;
+
+                    int columnIndex = 1;
+                    foreach (DataGridViewColumn column in dataGridView.Columns)
+                    {
+                        worksheet.Cells[2, columnIndex].Value = column.HeaderText;
+                        worksheet.Cells[2, columnIndex].Style.Font.Bold = true;
+                        worksheet.Cells[2, columnIndex].Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        columnIndex++;
+                    }
+
+                    int rowIndex = 3;
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        columnIndex = 1;
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            worksheet.Cells[rowIndex, columnIndex].Value = cell.Value?.ToString() ?? "";
+                            columnIndex++;
+                        }
+                        rowIndex++;
+                    }
+                    
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                    worksheet.Cells[worksheet.Dimension.Address].Style.Border.Top.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                    worksheet.Cells[worksheet.Dimension.Address].Style.Border.Left.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                    worksheet.Cells[worksheet.Dimension.Address].Style.Border.Right.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+                    worksheet.Cells[worksheet.Dimension.Address].Style.Border.Bottom.Style = OfficeOpenXml.Style.ExcelBorderStyle.Thin;
+
+                    FileInfo excelFile = new FileInfo(filePath);
+                    excelPackage.SaveAs(excelFile);
+                }
+
+                MessageBox.Show("Данные успешно экспортированы в Excel.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

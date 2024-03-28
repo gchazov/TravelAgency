@@ -46,5 +46,10 @@ namespace TravelAgency
         {
             Environment.Exit(0);
         }
+
+        private void Auth_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+        }
     }
 }
