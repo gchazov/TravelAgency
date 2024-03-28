@@ -97,7 +97,7 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteTour(string del_name, string del_city, string del_hotel, string del_accomodation,
+        static public bool DeleteTour(string del_name, string del_city, string del_hotel, string del_accomodation,
             string del_meal, string del_date_start, string del_duration, string del_cost)
         {
             try
@@ -112,10 +112,12 @@ namespace TravelAgency.Tables
                     $"duration = \"{del_duration}\" AND " +
                     $"cost = \"{del_cost}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
                 

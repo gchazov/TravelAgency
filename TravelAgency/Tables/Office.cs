@@ -64,17 +64,19 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteOffice(string del_address, string del_CEO, string del_phone)
+        static public bool DeleteOffice(string del_address, string del_CEO, string del_phone)
         {
             try
             {
                 DBconnection.msCommand.CommandText = $"DELETE FROM Office WHERE address = \"{del_address}\" AND " +
                     $"phone = \"{del_phone}\" AND CEO_name = \"{del_CEO}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         

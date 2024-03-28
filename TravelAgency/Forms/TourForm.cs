@@ -171,6 +171,7 @@ namespace TravelAgency.Forms
             {
                 string name,  city,  hotel,  accomodation,
                 meal,  date_start,  duration,  cost;
+                var res = false;
                 foreach (DataGridViewRow row in tours.SelectedRows)
                 {
                     name = row.Cells["Название"].Value.ToString();
@@ -184,11 +185,12 @@ namespace TravelAgency.Forms
 
                     duration = row.Cells["Длительность"].Value.ToString();
                     cost = row.Cells["Стоимость"].Value.ToString();
-                    Tour.DeleteTour(name, city, hotel, accomodation,
+                    res = Tour.DeleteTour(name, city, hotel, accomodation,
                     meal, date_start, duration, cost);
+                    if (!res) break;
                 }
                 Tour.GetTour();
-                MessageBox.Show($"Все выбранные туры успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные туры успешно удалены!");
             }
             else
             {

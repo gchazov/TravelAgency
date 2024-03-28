@@ -64,16 +64,18 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteAirport(string IATA_code)
+        static public bool DeleteAirport(string IATA_code)
         {
             try
             {
                 DBconnection.msCommand.CommandText = $"DELETE FROM airport WHERE id = \"{IATA_code}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 

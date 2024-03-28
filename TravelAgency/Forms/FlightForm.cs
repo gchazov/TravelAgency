@@ -183,6 +183,7 @@ namespace TravelAgency.Forms
             {
                 string id, date_dep, date_arr, airport_from, airport_to,
                     tour, flight_company;
+                var res = false;
                 foreach (DataGridViewRow row in flights.SelectedRows)
                 {
                     id = row.Cells["Код рейса"].Value.ToString();
@@ -215,11 +216,12 @@ namespace TravelAgency.Forms
                     flight_company = row.Cells["Авиакомпания"].Value.ToString();
 
 
-                    Flight.DeleteFlight(id, date_dep, date_arr, airport_from, airport_to,
+                    res = Flight.DeleteFlight(id, date_dep, date_arr, airport_from, airport_to,
                     tour, flight_company);
+                    if (!res) break;
                 }
                 Flight.GetFlight();
-                MessageBox.Show($"Все выбранные рейсы успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные рейсы успешно удалены!");
             }
             else
             {

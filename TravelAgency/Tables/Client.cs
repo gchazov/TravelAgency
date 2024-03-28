@@ -66,7 +66,7 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteClient(string del_name, string del_address, string del_passport, string del_phone)
+        static public bool DeleteClient(string del_name, string del_address, string del_passport, string del_phone)
         {
             try
             {
@@ -74,10 +74,12 @@ namespace TravelAgency.Tables
                     $"address = \"{del_address}\" AND " +
                     $"phone = \"{del_phone}\" AND passport = \"{del_passport}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 

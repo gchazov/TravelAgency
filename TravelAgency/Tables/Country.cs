@@ -60,16 +60,18 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteCountry(string del_code)
+        static public bool DeleteCountry(string del_code)
         {
             try
             {
                 DBconnection.msCommand.CommandText = $"DELETE FROM country WHERE id = \"{del_code}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;           
             }
         }
 

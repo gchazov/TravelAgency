@@ -157,6 +157,7 @@ namespace TravelAgency.Forms
             if (employees.SelectedRows.Count > 0)
             {
                 string name, address, passport, phone, position, office;
+                var res = false;
                 foreach(DataGridViewRow row in employees.SelectedRows)
                 {
                     name = row.Cells["ФИО"].Value.ToString();
@@ -165,10 +166,11 @@ namespace TravelAgency.Forms
                     phone = row.Cells["Телефон"].Value.ToString();
                     position = row.Cells["Должность"].Value.ToString();
                     office = row.Cells["Адрес работы"].Value.ToString();
-                    Employee.DeleteEmployee(name, address, passport, phone, position, office);
+                    res = Employee.DeleteEmployee(name, address, passport, phone, position, office);
+                    if (!res) break;
                 }
                 Employee.GetEmployee();
-                MessageBox.Show($"Все выбранные сотрудники успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные сотрудники успешно удалены!");
             }
             else
             {

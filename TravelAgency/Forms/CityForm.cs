@@ -29,12 +29,13 @@ namespace TravelAgency.Forms
         {
             groupBox1.Visible = false;
             groupBox2.Visible = false;
+            Country.GetCountry();
+            addCountry.DataSource = Country.dtCountry;
+            addCountry.DisplayMember = "Название";
+            editCountry.DataSource = Country.dtCountry;
+            editCountry.DisplayMember = "Название";
             City.GetCity();
             cities.DataSource = City.dtCity;
-            addCountry.DataSource = City.dtCity;
-            addCountry.DisplayMember = "Страна";
-            editCountry.DataSource = City.dtCity;
-            editCountry.DisplayMember = "Страна";
             originalHeight = this.Height;
         }
 
@@ -144,9 +145,9 @@ namespace TravelAgency.Forms
         {
             if (cities.SelectedRows.Count > 0)
             {
-                City.DeleteCity(cities.Rows[cities.SelectedRows[0].Index].Cells[0].Value.ToString());
+                var res = City.DeleteCity(cities.Rows[cities.SelectedRows[0].Index].Cells[0].Value.ToString());
                 City.GetCity();
-                MessageBox.Show($"Город успешно удален!");
+                if (res) MessageBox.Show($"Город успешно удален!");
             }
             else
             {

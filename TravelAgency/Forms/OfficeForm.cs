@@ -145,15 +145,17 @@ namespace TravelAgency.Forms
             if (offices.SelectedRows.Count > 0)
             {
                 string address, CEO, phone;
+                var res = false;
                 foreach(DataGridViewRow row in offices.SelectedRows)
                 {
                     address = row.Cells["Адрес"].Value.ToString();
                     CEO = row.Cells["ФИО директора"].Value.ToString();
                     phone = row.Cells["Телефон"].Value.ToString();
-                    Office.DeleteOffice(address, CEO, phone);
+                    res = Office.DeleteOffice(address, CEO, phone);
+                    if (!res) break;
                 }
                 Office.GetOffice();
-                MessageBox.Show($"Все выбранные филиалы успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные филиалы успешно удалены!");
             }
             else
             {

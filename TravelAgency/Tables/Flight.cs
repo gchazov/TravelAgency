@@ -100,7 +100,7 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteFlight(string del_id, string del_date_dep, string del_date_arr,
+        static public bool DeleteFlight(string del_id, string del_date_dep, string del_date_arr,
             string del_from_airport, string del_to_airport, string del_tour_name,
             string del_flight_company)
         {
@@ -118,10 +118,12 @@ namespace TravelAgency.Tables
                     $"WHERE tour.name = \"{del_tour_name}\") AND " +
                     $"flight.flight_company = \"{del_flight_company}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 

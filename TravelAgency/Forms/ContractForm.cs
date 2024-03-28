@@ -175,6 +175,7 @@ namespace TravelAgency.Forms
             if (contracts.SelectedRows.Count > 0)
             {
                 string tour, client, employee, date;
+                var res = false;
                 foreach (DataGridViewRow row in contracts.SelectedRows)
                 {
                     tour = row.Cells["Тур"].Value.ToString();
@@ -193,10 +194,11 @@ namespace TravelAgency.Forms
                     }
 
 
-                    Contract.DeleteContract(tour, client, employee, date);
+                    res = Contract.DeleteContract(tour, client, employee, date);
+                    if (!res) break;
                 }
                 Contract.GetContract();
-                MessageBox.Show($"Все выбранные туры успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные договоры успешно удалены!");
             }
             else
             {

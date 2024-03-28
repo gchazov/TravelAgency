@@ -147,16 +147,18 @@ namespace TravelAgency.Forms
             if (clients.SelectedRows.Count > 0)
             {
                 string name, address, passport, phone;
+                var res = false;
                 foreach(DataGridViewRow row in clients.SelectedRows)
                 {
                     name = row.Cells["ФИО"].Value.ToString();
                     address = row.Cells["Адрес"].Value.ToString();
                     passport = row.Cells["Паспорт"].Value.ToString();
                     phone = row.Cells["Телефон"].Value.ToString();
-                    Client.DeleteClient(name, address, passport, phone);
+                    res = Client.DeleteClient(name, address, passport, phone);
+                    if (!res) break;
                 }
                 Client.GetClient();
-                MessageBox.Show($"Все выбранные клиенты успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные клиенты успешно удалены!");
             }
             else
             {

@@ -146,9 +146,9 @@ namespace TravelAgency.Forms
         {
             if (countries.SelectedRows.Count > 0)
             {
-                Country.DeleteCountry(countries.Rows[countries.SelectedRows[0].Index].Cells[0].Value.ToString());
+                var res = Country.DeleteCountry(countries.Rows[countries.SelectedRows[0].Index].Cells[0].Value.ToString());
                 Country.GetCountry();
-                MessageBox.Show($"Страна успешно удалена!");
+                if (res) MessageBox.Show($"Страна успешно удалена!");
             }
             else
             {

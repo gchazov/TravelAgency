@@ -61,22 +61,24 @@ namespace TravelAgency.Tables
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        static public void DeleteHotel(string del_name, string del_stars, string del_city)
+        static public bool DeleteHotel(string del_name, string del_stars, string del_city)
         {
             try
             {
                 DBconnection.msCommand.CommandText = $"DELETE FROM Hotel WHERE name = \"{del_name}\" AND " +
                     $"stars = \"{del_stars}\" AND city_id = (SELECT id FROM city WHERE city.name = \"{del_city}\");";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         

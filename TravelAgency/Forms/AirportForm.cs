@@ -144,9 +144,9 @@ namespace TravelAgency.Forms
         {
             if (airports.SelectedRows.Count > 0)
             {
-                Airport.DeleteAirport(airports.Rows[airports.SelectedRows[0].Index].Cells[0].Value.ToString());
+                var result = Airport.DeleteAirport(airports.Rows[airports.SelectedRows[0].Index].Cells[0].Value.ToString());
                 Airport.GetAirport();
-                MessageBox.Show($"Аэропорт успешно удалён!");
+                if (result) MessageBox.Show($"Аэропорт успешно удалён!");
             }
             else
             {

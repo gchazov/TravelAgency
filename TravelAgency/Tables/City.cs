@@ -63,16 +63,18 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteCity(string del_code)
+        static public bool DeleteCity(string del_code)
         {
             try
             {
                 DBconnection.msCommand.CommandText = $"DELETE FROM City WHERE name = \"{del_code}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         

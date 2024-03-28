@@ -80,7 +80,7 @@ namespace TravelAgency.Tables
             }
         }
 
-        static public void DeleteContract(string tour, string client, string employee, string reg_date)
+        static public bool DeleteContract(string tour, string client, string employee, string reg_date)
         {
             try
             {
@@ -90,10 +90,12 @@ namespace TravelAgency.Tables
                     $"employee_id = (SELECT id FROM employee WHERE employee.name = \"{employee}\") AND " +
                     $"reg_date = \"{reg_date}\";";
                 DBconnection.msCommand.ExecuteNonQuery();
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
                         

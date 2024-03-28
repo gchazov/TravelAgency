@@ -150,15 +150,18 @@ namespace TravelAgency.Forms
             if (hotels.SelectedRows.Count > 0)
             {
                 string name, stars, city;
+                var res = false;
                 foreach(DataGridViewRow row in hotels.SelectedRows)
                 {
                     name = row.Cells["Название"].Value.ToString();
                     stars = row.Cells["Количество звёзд"].Value.ToString();
                     city = row.Cells["Город"].Value.ToString();
-                    Hotel.DeleteHotel(name, stars, city);
+                    res = Hotel.DeleteHotel(name, stars, city);
+                    if (!res) break;
+
                 }
                 Hotel.GetHotel();
-                MessageBox.Show($"Все выбранные отели успешно удалены!");
+                if (res)MessageBox.Show($"Все выбранные отели успешно удалены!");
             }
             else
             {
