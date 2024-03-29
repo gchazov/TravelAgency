@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf.WellKnownTypes;
+using iTextSharp.text;
 using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml;
+using iTextSharp.text.pdf;
+using Microsoft.Office.Interop.Word;
+using Application = Microsoft.Office.Interop.Word.Application;
+using Document = Microsoft.Office.Interop.Word.Document;
 
 namespace TravelAgency.Forms
 {
@@ -284,6 +293,37 @@ namespace TravelAgency.Forms
 
         private void city_add_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Договор PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                GeneratePdfFromTemplate(sfd.FileName);
+                MessageBox.Show("Договор успешно сохранён и готов к печати!");
+            }
+        }
+
+        private void GeneratePdfFromTemplate(string destinationFilePath)
+        {
+            string templateFileName = "Договор-Шаблон.docx";
+            string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string sourceFilePath = Path.Combine(solutionDirectory, templateFileName);
+
+            Application wordApp = new Application();
+
+            Document wordDoc = wordApp.Documents.Open(sourceFilePath);
+
+            wordDoc.SaveAs2(destinationFilePath, WdSaveFormat.wdFormatPDF);
+
+            wordDoc.Close();
+
+            wordApp.Quit();
         }
     }
 }
+

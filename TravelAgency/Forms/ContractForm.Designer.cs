@@ -30,6 +30,8 @@
         {
             this.contracts = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.employee_add = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.client_add = new System.Windows.Forms.ComboBox();
             this.tour_add = new System.Windows.Forms.ComboBox();
             this.date_add = new System.Windows.Forms.DateTimePicker();
@@ -43,20 +45,19 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.canceleditbtn = new System.Windows.Forms.Button();
-            this.editbtn = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.employee_add = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.employee_edit = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.canceleditbtn = new System.Windows.Forms.Button();
             this.client_edit = new System.Windows.Forms.ComboBox();
+            this.editbtn = new System.Windows.Forms.Button();
             this.tour_edit = new System.Windows.Forms.ComboBox();
-            this.date_edit = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.date_edit = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contracts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,13 +104,32 @@
             this.groupBox1.Text = "Добавить";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // employee_add
+            // 
+            this.employee_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employee_add.FormattingEnabled = true;
+            this.employee_add.Location = new System.Drawing.Point(10, 176);
+            this.employee_add.Name = "employee_add";
+            this.employee_add.Size = new System.Drawing.Size(255, 25);
+            this.employee_add.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(6, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 18);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Выберите сотрудника:";
+            // 
             // client_add
             // 
             this.client_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.client_add.FormattingEnabled = true;
             this.client_add.Location = new System.Drawing.Point(10, 118);
             this.client_add.Name = "client_add";
-            this.client_add.Size = new System.Drawing.Size(255, 30);
+            this.client_add.Size = new System.Drawing.Size(255, 25);
             this.client_add.TabIndex = 6;
             // 
             // tour_add
@@ -118,7 +138,7 @@
             this.tour_add.FormattingEnabled = true;
             this.tour_add.Location = new System.Drawing.Point(10, 60);
             this.tour_add.Name = "tour_add";
-            this.tour_add.Size = new System.Drawing.Size(255, 30);
+            this.tour_add.Size = new System.Drawing.Size(255, 25);
             this.tour_add.TabIndex = 5;
             this.tour_add.SelectedIndexChanged += new System.EventHandler(this.city_add_SelectedIndexChanged);
             // 
@@ -126,7 +146,7 @@
             // 
             this.date_add.Location = new System.Drawing.Point(11, 235);
             this.date_add.Name = "date_add";
-            this.date_add.Size = new System.Drawing.Size(221, 30);
+            this.date_add.Size = new System.Drawing.Size(221, 25);
             this.date_add.TabIndex = 8;
             // 
             // label12
@@ -135,7 +155,7 @@
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(6, 209);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(349, 22);
+            this.label12.Size = new System.Drawing.Size(289, 18);
             this.label12.TabIndex = 16;
             this.label12.Text = "Введите дату заключения договора:";
             // 
@@ -145,7 +165,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(6, 93);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(189, 22);
+            this.label8.Size = new System.Drawing.Size(156, 18);
             this.label8.TabIndex = 12;
             this.label8.Text = "Выберите клиента:";
             // 
@@ -179,7 +199,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 22);
+            this.label2.Size = new System.Drawing.Size(121, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите тур:";
             // 
@@ -247,6 +267,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактировать";
             // 
+            // employee_edit
+            // 
+            this.employee_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employee_edit.FormattingEnabled = true;
+            this.employee_edit.ItemHeight = 17;
+            this.employee_edit.Location = new System.Drawing.Point(10, 176);
+            this.employee_edit.Name = "employee_edit";
+            this.employee_edit.Size = new System.Drawing.Size(255, 25);
+            this.employee_edit.TabIndex = 13;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(187, 18);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Выберите сотрудника:";
+            // 
             // canceleditbtn
             // 
             this.canceleditbtn.BackColor = System.Drawing.Color.Crimson;
@@ -258,6 +298,16 @@
             this.canceleditbtn.Text = "Отменить";
             this.canceleditbtn.UseVisualStyleBackColor = false;
             this.canceleditbtn.Click += new System.EventHandler(this.canceleditbtn_Click);
+            // 
+            // client_edit
+            // 
+            this.client_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.client_edit.FormattingEnabled = true;
+            this.client_edit.ItemHeight = 17;
+            this.client_edit.Location = new System.Drawing.Point(10, 118);
+            this.client_edit.Name = "client_edit";
+            this.client_edit.Size = new System.Drawing.Size(255, 25);
+            this.client_edit.TabIndex = 12;
             // 
             // editbtn
             // 
@@ -271,6 +321,53 @@
             this.editbtn.UseVisualStyleBackColor = false;
             this.editbtn.Click += new System.EventHandler(this.editbtn_Click);
             // 
+            // tour_edit
+            // 
+            this.tour_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tour_edit.FormattingEnabled = true;
+            this.tour_edit.ItemHeight = 17;
+            this.tour_edit.Location = new System.Drawing.Point(10, 60);
+            this.tour_edit.Name = "tour_edit";
+            this.tour_edit.Size = new System.Drawing.Size(255, 25);
+            this.tour_edit.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(121, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Выберите тур:";
+            // 
+            // date_edit
+            // 
+            this.date_edit.Location = new System.Drawing.Point(11, 235);
+            this.date_edit.Name = "date_edit";
+            this.date_edit.Size = new System.Drawing.Size(221, 25);
+            this.date_edit.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 93);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 18);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Выберите клиента:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(6, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(289, 18);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Введите дату заключения договора:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -278,7 +375,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(325, 37);
+            this.label7.Size = new System.Drawing.Size(259, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Договоры\"";
             // 
@@ -292,108 +389,25 @@
             this.panel1.Size = new System.Drawing.Size(939, 344);
             this.panel1.TabIndex = 8;
             // 
-            // employee_add
+            // pdf
             // 
-            this.employee_add.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.employee_add.FormattingEnabled = true;
-            this.employee_add.Location = new System.Drawing.Point(10, 176);
-            this.employee_add.Name = "employee_add";
-            this.employee_add.Size = new System.Drawing.Size(255, 30);
-            this.employee_add.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 22);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Выберите сотрудника:";
-            // 
-            // employee_edit
-            // 
-            this.employee_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.employee_edit.FormattingEnabled = true;
-            this.employee_edit.ItemHeight = 22;
-            this.employee_edit.Location = new System.Drawing.Point(10, 176);
-            this.employee_edit.Name = "employee_edit";
-            this.employee_edit.Size = new System.Drawing.Size(255, 30);
-            this.employee_edit.TabIndex = 13;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(6, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(225, 22);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Выберите сотрудника:";
-            // 
-            // client_edit
-            // 
-            this.client_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.client_edit.FormattingEnabled = true;
-            this.client_edit.ItemHeight = 22;
-            this.client_edit.Location = new System.Drawing.Point(10, 118);
-            this.client_edit.Name = "client_edit";
-            this.client_edit.Size = new System.Drawing.Size(255, 30);
-            this.client_edit.TabIndex = 12;
-            // 
-            // tour_edit
-            // 
-            this.tour_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tour_edit.FormattingEnabled = true;
-            this.tour_edit.ItemHeight = 22;
-            this.tour_edit.Location = new System.Drawing.Point(10, 60);
-            this.tour_edit.Name = "tour_edit";
-            this.tour_edit.Size = new System.Drawing.Size(255, 30);
-            this.tour_edit.TabIndex = 11;
-            // 
-            // date_edit
-            // 
-            this.date_edit.Location = new System.Drawing.Point(11, 235);
-            this.date_edit.Name = "date_edit";
-            this.date_edit.Size = new System.Drawing.Size(221, 30);
-            this.date_edit.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(6, 209);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(349, 22);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Введите дату заключения договора:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(6, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 22);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Выберите клиента:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 22);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Выберите тур:";
+            this.pdf.BackColor = System.Drawing.Color.IndianRed;
+            this.pdf.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.pdf.Location = new System.Drawing.Point(17, 19);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(62, 24);
+            this.pdf.TabIndex = 9;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = false;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
             // 
             // ContractForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(973, 281);
+            this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -450,5 +464,6 @@
         private System.Windows.Forms.DateTimePicker date_edit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button pdf;
     }
 }
