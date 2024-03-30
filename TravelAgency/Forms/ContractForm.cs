@@ -22,6 +22,9 @@ using iTextSharp.text.pdf;
 using Microsoft.Office.Interop.Word;
 using Application = Microsoft.Office.Interop.Word.Application;
 using Document = Microsoft.Office.Interop.Word.Document;
+using System.Reflection;
+using Type = System.Type;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace TravelAgency.Forms
 {
@@ -298,13 +301,17 @@ namespace TravelAgency.Forms
 
         private void pdf_Click(object sender, EventArgs e)
         {
+            if (contracts.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Договор не выбран!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "PDF (*.pdf)|*.pdf";
             sfd.FileName = "Договор PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 GeneratePdfFromTemplate(sfd.FileName);
-                MessageBox.Show("Договор успешно сохранён и готов к печати!");
+                MessageBox.Show("Договор успешно сохранён и готов к печати!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -314,16 +321,86 @@ namespace TravelAgency.Forms
             string solutionDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string sourceFilePath = Path.Combine(solutionDirectory, templateFileName);
 
+            // Создаем копию документа-шаблона
+            string tempFilePath = Path.GetTempFileName();
+            File.Copy(sourceFilePath, tempFilePath, true);
+
             Application wordApp = new Application();
 
-            Document wordDoc = wordApp.Documents.Open(sourceFilePath);
+            Document wordDoc = wordApp.Documents.Open(tempFilePath);
+
+            var data = GetData();
+            ReplaceTextInDocument(wordDoc, "<NUMBER>", data[8]);
+            ReplaceTextInDocument(wordDoc, "<CITY>", data[6].Substring(0, data[6].IndexOf(',')));
+            ReplaceTextInDocument(wordDoc, "<EMPLOYEE>", data[2]);
+            ReplaceTextInDocument(wordDoc, "<CLIENT>", data[1]);
+            ReplaceTextInDocument(wordDoc, "<TOUR>", data[0]);
+            ReplaceTextInDocument(wordDoc, "<FIRM_ADDRESS>", data[6]);
+            ReplaceTextInDocument(wordDoc, "<PHONE_FIRM>", data[7]);
+            ReplaceTextInDocument(wordDoc, "<CLIENT_ADDRESS>", data[5]);
+            ReplaceTextInDocument(wordDoc, "<PHONE_CLIENT>", data[4]);
+            ReplaceTextInDocument(wordDoc, "<DATE>", data[3]);
+
 
             wordDoc.SaveAs2(destinationFilePath, WdSaveFormat.wdFormatPDF);
-
             wordDoc.Close();
-
             wordApp.Quit();
+
+            // Удаляем временную копию
+            File.Delete(tempFilePath);
         }
+
+        private void ReplaceTextInDocument(Document doc, string findText, string replaceText)
+        {
+            Find findObject = doc.Content.Find;
+            findObject.ClearFormatting();
+            findObject.Text = findText;
+            findObject.Replacement.ClearFormatting();
+            findObject.Replacement.Text = replaceText;
+
+            object replaceAll = WdReplace.wdReplaceAll;
+            findObject.Execute(FindText: Type.Missing, MatchCase: false, MatchWholeWord: false,
+                               MatchWildcards: false, MatchSoundsLike: Type.Missing,
+                               MatchAllWordForms: false, Forward: true,
+                               Wrap: WdFindWrap.wdFindContinue, Format: false,
+                               ReplaceWith: Type.Missing, Replace: replaceAll);
+        }
+
+        private List<string> GetData()
+        {
+            DataGridViewRow selectedRow = contracts.SelectedRows[0];
+
+            List<string> rowData = new List<string>();
+
+            foreach (DataGridViewCell cell in selectedRow.Cells)
+            {
+                rowData.Add(cell.Value.ToString());
+            }
+            string dateString = rowData.Last();
+            DateTime date = DateTime.ParseExact(dateString, "dd.MM.yyyy HH:mm:ss", null);
+            
+            string mysqlFormattedDate = date.ToString("yyyy-MM-dd HH:mm");
+            rowData[3] = mysqlFormattedDate;
+
+            string[] qqs =
+            {
+                $"SELECT phone FROM client WHERE name = \'{rowData[1]}\'",
+                $"SELECT address FROM client WHERE name = \'{rowData[1]}\'",
+                $"select office.address from employee inner join office on employee.office_id = office.id where employee.name = '{rowData[2]}';",
+                $"select office.phone from employee inner join office on employee.office_id = office.id where employee.name = '{rowData[2]}';",
+                $"select contract.id from contract join tour on tour.id = tour_id join client on client_id = client.id join employee on employee.id = employee_id " +
+                $"where tour.name = \'{rowData[0]}\' and client.name = \'{rowData[1]}\' and employee.name = \'{rowData[2]}\' and reg_date = \'{mysqlFormattedDate}\'"
+            };
+
+            foreach (string q in qqs)
+            {
+                DBconnection.msCommand.CommandText = q;
+                string res = DBconnection.msCommand.ExecuteScalar().ToString();
+                rowData.Add(res);
+            }
+            return rowData;
+        }
+
     }
 }
 

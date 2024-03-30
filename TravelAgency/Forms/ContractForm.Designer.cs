@@ -75,6 +75,7 @@
             this.contracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contracts.Location = new System.Drawing.Point(17, 50);
             this.contracts.Margin = new System.Windows.Forms.Padding(4);
+            this.contracts.MultiSelect = false;
             this.contracts.Name = "contracts";
             this.contracts.ReadOnly = true;
             this.contracts.RowHeadersWidth = 51;
