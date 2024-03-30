@@ -338,5 +338,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Icons\3925427-contract-document-paper-icon_111567.ico" />
+    <Content Include="Icons\42493hotel_99086.ico" />
+    <Content Include="Icons\42586airplane_98957.ico" />
+    <Content Include="Icons\brazil_country_flag_map_nation_pointer_world_icon_133769.ico" />
+    <Content Include="Icons\city_building_construction_cities_buildings_icon_133085.ico" />
+    <Content Include="Icons\signout_106525.ico" />
+    <Content Include="Icons\transfer_man_employee_user_avatar_arrow_refresh_icon_141997.ico" />
+    <Content Include="Icons\travel.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

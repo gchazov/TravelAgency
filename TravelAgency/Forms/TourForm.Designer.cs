@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TourForm));
             this.tours = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.hotel_add = new System.Windows.Forms.ComboBox();
@@ -593,7 +594,7 @@
             // 
             this.pdf.BackColor = System.Drawing.Color.Red;
             this.pdf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pdf.Location = new System.Drawing.Point(17, 16);
+            this.pdf.Location = new System.Drawing.Point(17, 20);
             this.pdf.Name = "pdf";
             this.pdf.Size = new System.Drawing.Size(75, 23);
             this.pdf.TabIndex = 9;
@@ -605,7 +606,7 @@
             // 
             this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.excel.Location = new System.Drawing.Point(107, 16);
+            this.excel.Location = new System.Drawing.Point(98, 20);
             this.excel.Name = "excel";
             this.excel.Size = new System.Drawing.Size(75, 23);
             this.excel.TabIndex = 10;
@@ -630,10 +631,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "TourForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Туры";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TourForm_FormClosing);
             this.Load += new System.EventHandler(this.TourForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tours)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 using TravelAgency.Tables;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -260,6 +261,33 @@ namespace TravelAgency.Forms
             phone_edit.Text = "";
             office_add.Text = "";
             position_add.Text = "";
+        }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Сотрудники PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(employees, sfd.FileName);
+            }
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Сотрудники Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(employees, sfd.FileName);
+            }
+        }
+
+        private void EmployeeForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
         }
     }
 }

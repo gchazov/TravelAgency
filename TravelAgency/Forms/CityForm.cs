@@ -200,7 +200,29 @@ namespace TravelAgency.Forms
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Города PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(cities, sfd.FileName);
+            }
+        }
 
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Города Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(cities, sfd.FileName);
+            }
+        }
+
+        private void CityForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
         }
     }
 }

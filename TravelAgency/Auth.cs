@@ -49,7 +49,7 @@ namespace TravelAgency
 
         private void Auth_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            button1_Click(sender, e);
         }
     }
 }

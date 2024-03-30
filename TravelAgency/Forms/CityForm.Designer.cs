@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CityForm));
             this.cities = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.addCountry = new System.Windows.Forms.ComboBox();
@@ -49,6 +50,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.excel = new System.Windows.Forms.Button();
+            this.pdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cities)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,7 +100,7 @@
             this.addCountry.FormattingEnabled = true;
             this.addCountry.Location = new System.Drawing.Point(10, 131);
             this.addCountry.Name = "addCountry";
-            this.addCountry.Size = new System.Drawing.Size(247, 35);
+            this.addCountry.Size = new System.Drawing.Size(247, 30);
             this.addCountry.TabIndex = 6;
             // 
             // label1
@@ -106,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 22);
+            this.label1.Size = new System.Drawing.Size(156, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите название: ";
             // 
@@ -139,7 +142,7 @@
             this.name_field_add.Location = new System.Drawing.Point(10, 57);
             this.name_field_add.MaxLength = 20;
             this.name_field_add.Name = "name_field_add";
-            this.name_field_add.Size = new System.Drawing.Size(247, 36);
+            this.name_field_add.Size = new System.Drawing.Size(247, 30);
             this.name_field_add.TabIndex = 5;
             // 
             // label2
@@ -148,7 +151,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 22);
+            this.label2.Size = new System.Drawing.Size(150, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите страну:";
             // 
@@ -202,7 +205,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 22);
+            this.label5.Size = new System.Drawing.Size(150, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "Выберите страну:";
             // 
@@ -211,7 +214,7 @@
             this.name_field_edit.Location = new System.Drawing.Point(10, 57);
             this.name_field_edit.MaxLength = 20;
             this.name_field_edit.Name = "name_field_edit";
-            this.name_field_edit.Size = new System.Drawing.Size(264, 36);
+            this.name_field_edit.Size = new System.Drawing.Size(264, 30);
             this.name_field_edit.TabIndex = 9;
             // 
             // editbtn
@@ -260,7 +263,7 @@
             this.editCountry.FormattingEnabled = true;
             this.editCountry.Location = new System.Drawing.Point(10, 130);
             this.editCountry.Name = "editCountry";
-            this.editCountry.Size = new System.Drawing.Size(247, 35);
+            this.editCountry.Size = new System.Drawing.Size(247, 30);
             this.editCountry.TabIndex = 10;
             // 
             // label3
@@ -269,7 +272,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 22);
+            this.label3.Size = new System.Drawing.Size(148, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите название";
             // 
@@ -279,7 +282,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(171, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(286, 37);
+            this.label7.Size = new System.Drawing.Size(227, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Города\"";
             // 
@@ -293,12 +296,37 @@
             this.panel1.Size = new System.Drawing.Size(586, 236);
             this.panel1.TabIndex = 8;
             // 
+            // excel
+            // 
+            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.excel.Location = new System.Drawing.Point(75, 20);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(52, 23);
+            this.excel.TabIndex = 18;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = false;
+            // 
+            // pdf
+            // 
+            this.pdf.BackColor = System.Drawing.Color.Red;
+            this.pdf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pdf.Location = new System.Drawing.Point(17, 20);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(52, 23);
+            this.pdf.TabIndex = 17;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = false;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            // 
             // CityForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(623, 280);
+            this.Controls.Add(this.excel);
+            this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -308,10 +336,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "CityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Города";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CityForm_FormClosing);
             this.Load += new System.EventHandler(this.CityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cities)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -347,5 +378,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox addCountry;
         private System.Windows.Forms.ComboBox editCountry;
+        private System.Windows.Forms.Button excel;
+        private System.Windows.Forms.Button pdf;
     }
 }

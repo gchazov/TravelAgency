@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractForm));
             this.contracts = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.employee_add = new System.Windows.Forms.ComboBox();
@@ -58,6 +59,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pdf = new System.Windows.Forms.Button();
+            this.excel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.contracts)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -396,11 +398,23 @@
             this.pdf.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.pdf.Location = new System.Drawing.Point(17, 19);
             this.pdf.Name = "pdf";
-            this.pdf.Size = new System.Drawing.Size(62, 24);
+            this.pdf.Size = new System.Drawing.Size(130, 24);
             this.pdf.TabIndex = 9;
-            this.pdf.Text = "PDF";
+            this.pdf.Text = "Договор в PDF";
             this.pdf.UseVisualStyleBackColor = false;
             this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            // 
+            // excel
+            // 
+            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.excel.Location = new System.Drawing.Point(714, 20);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(75, 23);
+            this.excel.TabIndex = 17;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = false;
+            this.excel.Click += new System.EventHandler(this.excel_Click);
             // 
             // ContractForm
             // 
@@ -408,6 +422,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(973, 281);
+            this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
@@ -418,10 +433,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "ContractForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договоры";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContractForm_FormClosing);
             this.Load += new System.EventHandler(this.ContractForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.contracts)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -466,5 +484,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button pdf;
+        private System.Windows.Forms.Button excel;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Google.Protobuf.WellKnownTypes;
+﻿using DocumentFormat.OpenXml.ExtendedProperties;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -335,6 +336,33 @@ namespace TravelAgency.Forms
         private void city_add_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Авиарейсы PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(flights, sfd.FileName);
+            }
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Отели Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(flights, sfd.FileName);
+            }
+        }
+
+        private void FlightForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
         }
     }
 }

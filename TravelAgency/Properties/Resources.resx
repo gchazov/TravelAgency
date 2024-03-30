@@ -118,6 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="brazil_country_flag_map_nation_pointer_world_icon_133769" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\brazil_country_flag_map_nation_pointer_world_icon_133769.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="city_building_construction_cities_buildings_icon_133085" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\city_building_construction_cities_buildings_icon_133085.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="signout_106525" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\signout_106525.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transfer_man_employee_user_avatar_arrow_refresh_icon_141997" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\transfer_man_employee_user_avatar_arrow_refresh_icon_141997.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="travel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\travel.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3925427_contract_document_paper_icon_111567" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\3925427-contract-document-paper-icon_111567.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_42493hotel_99086" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\42493hotel_99086.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_42586airplane_98957" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\42586airplane_98957.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Договор_Шаблон" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Договор-Шаблон.docx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

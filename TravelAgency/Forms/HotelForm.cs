@@ -233,5 +233,32 @@ namespace TravelAgency.Forms
             editCity.Text = "";
             stars_edit.Text = "";
         }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Отели PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(hotels, sfd.FileName);
+            }
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Отели Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(hotels, sfd.FileName);
+            }
+        }
+
+        private void HotelForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
+        }
     }
 }

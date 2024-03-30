@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CountryForm));
             this.countries = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.id_field_add = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.excel = new System.Windows.Forms.Button();
+            this.pdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.countries)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -96,7 +99,7 @@
             this.id_field_add.Location = new System.Drawing.Point(10, 66);
             this.id_field_add.MaxLength = 3;
             this.id_field_add.Name = "id_field_add";
-            this.id_field_add.Size = new System.Drawing.Size(55, 36);
+            this.id_field_add.Size = new System.Drawing.Size(55, 30);
             this.id_field_add.TabIndex = 5;
             // 
             // label1
@@ -105,7 +108,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 22);
+            this.label1.Size = new System.Drawing.Size(164, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите код ОКСМ: ";
             // 
@@ -138,7 +141,7 @@
             this.name_field_add.Location = new System.Drawing.Point(10, 130);
             this.name_field_add.MaxLength = 25;
             this.name_field_add.Name = "name_field_add";
-            this.name_field_add.Size = new System.Drawing.Size(247, 36);
+            this.name_field_add.Size = new System.Drawing.Size(247, 30);
             this.name_field_add.TabIndex = 6;
             // 
             // label2
@@ -147,7 +150,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 22);
+            this.label2.Size = new System.Drawing.Size(156, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Введите название: ";
             // 
@@ -201,7 +204,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(189, 22);
+            this.label5.Size = new System.Drawing.Size(156, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "Введите название: ";
             // 
@@ -210,7 +213,7 @@
             this.name_field_edit.Location = new System.Drawing.Point(6, 130);
             this.name_field_edit.MaxLength = 25;
             this.name_field_edit.Name = "name_field_edit";
-            this.name_field_edit.Size = new System.Drawing.Size(264, 36);
+            this.name_field_edit.Size = new System.Drawing.Size(264, 30);
             this.name_field_edit.TabIndex = 10;
             // 
             // editbtn
@@ -258,7 +261,7 @@
             this.id_field_edit.Location = new System.Drawing.Point(10, 66);
             this.id_field_edit.MaxLength = 3;
             this.id_field_edit.Name = "id_field_edit";
-            this.id_field_edit.Size = new System.Drawing.Size(55, 36);
+            this.id_field_edit.Size = new System.Drawing.Size(55, 30);
             this.id_field_edit.TabIndex = 9;
             this.id_field_edit.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -268,7 +271,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 22);
+            this.label3.Size = new System.Drawing.Size(164, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите код ОКСМ: ";
             // 
@@ -278,7 +281,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(171, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(294, 37);
+            this.label7.Size = new System.Drawing.Size(234, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Страны\"";
             // 
@@ -292,12 +295,38 @@
             this.panel1.Size = new System.Drawing.Size(586, 236);
             this.panel1.TabIndex = 8;
             // 
+            // excel
+            // 
+            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.excel.Location = new System.Drawing.Point(78, 20);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(55, 23);
+            this.excel.TabIndex = 18;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = false;
+            this.excel.Click += new System.EventHandler(this.excel_Click);
+            // 
+            // pdf
+            // 
+            this.pdf.BackColor = System.Drawing.Color.Red;
+            this.pdf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pdf.Location = new System.Drawing.Point(17, 20);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(55, 23);
+            this.pdf.TabIndex = 17;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = false;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            // 
             // CountryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(623, 277);
+            this.Controls.Add(this.excel);
+            this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -307,10 +336,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "CountryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Страны";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CountryForm_FormClosing);
             this.Load += new System.EventHandler(this.CountryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countries)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -346,5 +378,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox id_field_edit;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button excel;
+        private System.Windows.Forms.Button pdf;
     }
 }

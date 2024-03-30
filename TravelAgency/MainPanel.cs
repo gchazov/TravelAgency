@@ -143,7 +143,7 @@ namespace TravelAgency
 
         private void MainPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            button4_Click(sender, e);
         }
 
         public static void ExportToPDF(DataGridView dataGridView, string filePath)

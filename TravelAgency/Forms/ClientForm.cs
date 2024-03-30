@@ -237,5 +237,32 @@ namespace TravelAgency.Forms
             passport_edit.Text = "";
             phone_edit.Text = "";
         }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Клиенты PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(clients, sfd.FileName);
+            }
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Клиенты Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(clients, sfd.FileName);
+            }
+        }
+
+        private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
+        }
     }
 }

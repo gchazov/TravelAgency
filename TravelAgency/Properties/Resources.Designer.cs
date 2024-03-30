@@ -61,6 +61,86 @@ namespace TravelAgency.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon _3925427_contract_document_paper_icon_111567 {
+            get {
+                object obj = ResourceManager.GetObject("_3925427_contract_document_paper_icon_111567", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon _42493hotel_99086 {
+            get {
+                object obj = ResourceManager.GetObject("_42493hotel_99086", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon _42586airplane_98957 {
+            get {
+                object obj = ResourceManager.GetObject("_42586airplane_98957", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon brazil_country_flag_map_nation_pointer_world_icon_133769 {
+            get {
+                object obj = ResourceManager.GetObject("brazil_country_flag_map_nation_pointer_world_icon_133769", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon city_building_construction_cities_buildings_icon_133085 {
+            get {
+                object obj = ResourceManager.GetObject("city_building_construction_cities_buildings_icon_133085", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon signout_106525 {
+            get {
+                object obj = ResourceManager.GetObject("signout_106525", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon transfer_man_employee_user_avatar_arrow_refresh_icon_141997 {
+            get {
+                object obj = ResourceManager.GetObject("transfer_man_employee_user_avatar_arrow_refresh_icon_141997", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок).
+        /// </summary>
+        internal static System.Drawing.Icon travel {
+            get {
+                object obj = ResourceManager.GetObject("travel", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         internal static byte[] Договор_Шаблон {

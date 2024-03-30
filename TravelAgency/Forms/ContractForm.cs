@@ -25,6 +25,8 @@ using Document = Microsoft.Office.Interop.Word.Document;
 using System.Reflection;
 using Type = System.Type;
 using DocumentFormat.OpenXml.Spreadsheet;
+using System.Diagnostics.Contracts;
+using Contract = TravelAgency.Tables.Contract;
 
 namespace TravelAgency.Forms
 {
@@ -304,6 +306,7 @@ namespace TravelAgency.Forms
             if (contracts.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Договор не выбран!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "PDF (*.pdf)|*.pdf";
@@ -401,6 +404,21 @@ namespace TravelAgency.Forms
             return rowData;
         }
 
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Договоры Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(contracts, sfd.FileName);
+            }
+        }
+
+        private void ContractForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
+        }
     }
 }
 

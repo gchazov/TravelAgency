@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlightForm));
             this.flights = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,6 +72,8 @@
             this.date_arr_edit = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.excel = new System.Windows.Forms.Button();
+            this.pdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.flights)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,7 +133,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(6, 330);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 22);
+            this.label8.Size = new System.Drawing.Size(121, 18);
             this.label8.TabIndex = 26;
             this.label8.Text = "Выберите тур:";
             // 
@@ -139,7 +142,7 @@
             this.tour_add.FormattingEnabled = true;
             this.tour_add.Location = new System.Drawing.Point(10, 355);
             this.tour_add.Name = "tour_add";
-            this.tour_add.Size = new System.Drawing.Size(274, 30);
+            this.tour_add.Size = new System.Drawing.Size(274, 25);
             this.tour_add.TabIndex = 11;
             // 
             // label6
@@ -148,7 +151,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(205, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(239, 22);
+            this.label6.Size = new System.Drawing.Size(197, 18);
             this.label6.TabIndex = 24;
             this.label6.Text = "Введите авиакомпанию:";
             // 
@@ -157,7 +160,7 @@
             this.flight_company_add.Location = new System.Drawing.Point(209, 57);
             this.flight_company_add.MaxLength = 45;
             this.flight_company_add.Name = "flight_company_add";
-            this.flight_company_add.Size = new System.Drawing.Size(216, 30);
+            this.flight_company_add.Size = new System.Drawing.Size(216, 25);
             this.flight_company_add.TabIndex = 6;
             // 
             // label5
@@ -166,7 +169,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 272);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 22);
+            this.label5.Size = new System.Drawing.Size(249, 18);
             this.label5.TabIndex = 22;
             this.label5.Text = "Выберите аэропорт прибытия:";
             // 
@@ -175,7 +178,7 @@
             this.airport_to_add.FormattingEnabled = true;
             this.airport_to_add.Location = new System.Drawing.Point(10, 297);
             this.airport_to_add.Name = "airport_to_add";
-            this.airport_to_add.Size = new System.Drawing.Size(274, 30);
+            this.airport_to_add.Size = new System.Drawing.Size(274, 25);
             this.airport_to_add.TabIndex = 10;
             // 
             // label4
@@ -184,7 +187,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(6, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(278, 22);
+            this.label4.Size = new System.Drawing.Size(230, 18);
             this.label4.TabIndex = 20;
             this.label4.Text = "Выберите аэропорт вылета:";
             // 
@@ -193,14 +196,14 @@
             this.airport_from_add.FormattingEnabled = true;
             this.airport_from_add.Location = new System.Drawing.Point(10, 239);
             this.airport_from_add.Name = "airport_from_add";
-            this.airport_from_add.Size = new System.Drawing.Size(274, 30);
+            this.airport_from_add.Size = new System.Drawing.Size(274, 25);
             this.airport_from_add.TabIndex = 9;
             // 
             // date_arr_add
             // 
             this.date_arr_add.Location = new System.Drawing.Point(10, 181);
             this.date_arr_add.Name = "date_arr_add";
-            this.date_arr_add.Size = new System.Drawing.Size(226, 30);
+            this.date_arr_add.Size = new System.Drawing.Size(226, 25);
             this.date_arr_add.TabIndex = 8;
             // 
             // label3
@@ -209,7 +212,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(252, 22);
+            this.label3.Size = new System.Drawing.Size(210, 18);
             this.label3.TabIndex = 17;
             this.label3.Text = "Выберите дату прибытия:";
             // 
@@ -217,7 +220,7 @@
             // 
             this.date_dep_add.Location = new System.Drawing.Point(10, 115);
             this.date_dep_add.Name = "date_dep_add";
-            this.date_dep_add.Size = new System.Drawing.Size(226, 30);
+            this.date_dep_add.Size = new System.Drawing.Size(226, 25);
             this.date_dep_add.TabIndex = 7;
             // 
             // clear_add
@@ -238,7 +241,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 22);
+            this.label1.Size = new System.Drawing.Size(161, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите код рейса:";
             // 
@@ -271,7 +274,7 @@
             this.id_add.Location = new System.Drawing.Point(10, 57);
             this.id_add.MaxLength = 7;
             this.id_add.Name = "id_add";
-            this.id_add.Size = new System.Drawing.Size(126, 30);
+            this.id_add.Size = new System.Drawing.Size(126, 25);
             this.id_add.TabIndex = 5;
             // 
             // label2
@@ -280,7 +283,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 22);
+            this.label2.Size = new System.Drawing.Size(191, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите дату вылета:";
             // 
@@ -361,7 +364,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(7, 330);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(145, 22);
+            this.label9.Size = new System.Drawing.Size(121, 18);
             this.label9.TabIndex = 40;
             this.label9.Text = "Выберите тур:";
             // 
@@ -382,7 +385,7 @@
             this.tour_edit.FormattingEnabled = true;
             this.tour_edit.Location = new System.Drawing.Point(11, 355);
             this.tour_edit.Name = "tour_edit";
-            this.tour_edit.Size = new System.Drawing.Size(274, 30);
+            this.tour_edit.Size = new System.Drawing.Size(274, 25);
             this.tour_edit.TabIndex = 21;
             // 
             // canceleditbtn
@@ -403,7 +406,7 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(206, 32);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(239, 22);
+            this.label10.Size = new System.Drawing.Size(197, 18);
             this.label10.TabIndex = 38;
             this.label10.Text = "Введите авиакомпанию:";
             // 
@@ -424,7 +427,7 @@
             this.flight_company_edit.Location = new System.Drawing.Point(210, 57);
             this.flight_company_edit.MaxLength = 45;
             this.flight_company_edit.Name = "flight_company_edit";
-            this.flight_company_edit.Size = new System.Drawing.Size(216, 30);
+            this.flight_company_edit.Size = new System.Drawing.Size(216, 25);
             this.flight_company_edit.TabIndex = 16;
             // 
             // label14
@@ -433,7 +436,7 @@
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(7, 32);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 22);
+            this.label14.Size = new System.Drawing.Size(161, 18);
             this.label14.TabIndex = 29;
             this.label14.Text = "Введите код рейса:";
             // 
@@ -443,7 +446,7 @@
             this.label11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(7, 272);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(300, 22);
+            this.label11.Size = new System.Drawing.Size(249, 18);
             this.label11.TabIndex = 36;
             this.label11.Text = "Выберите аэропорт прибытия:";
             // 
@@ -453,7 +456,7 @@
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.Location = new System.Drawing.Point(7, 90);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(230, 22);
+            this.label15.Size = new System.Drawing.Size(191, 18);
             this.label15.TabIndex = 27;
             this.label15.Text = "Выберите дату вылета:";
             // 
@@ -462,7 +465,7 @@
             this.airport_to_edit.FormattingEnabled = true;
             this.airport_to_edit.Location = new System.Drawing.Point(11, 297);
             this.airport_to_edit.Name = "airport_to_edit";
-            this.airport_to_edit.Size = new System.Drawing.Size(274, 30);
+            this.airport_to_edit.Size = new System.Drawing.Size(274, 25);
             this.airport_to_edit.TabIndex = 20;
             // 
             // id_edit
@@ -470,7 +473,7 @@
             this.id_edit.Location = new System.Drawing.Point(11, 57);
             this.id_edit.MaxLength = 7;
             this.id_edit.Name = "id_edit";
-            this.id_edit.Size = new System.Drawing.Size(126, 30);
+            this.id_edit.Size = new System.Drawing.Size(126, 25);
             this.id_edit.TabIndex = 15;
             // 
             // label12
@@ -479,7 +482,7 @@
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(7, 214);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(278, 22);
+            this.label12.Size = new System.Drawing.Size(230, 18);
             this.label12.TabIndex = 34;
             this.label12.Text = "Выберите аэропорт вылета:";
             // 
@@ -487,7 +490,7 @@
             // 
             this.date_dep_edit.Location = new System.Drawing.Point(11, 115);
             this.date_dep_edit.Name = "date_dep_edit";
-            this.date_dep_edit.Size = new System.Drawing.Size(226, 30);
+            this.date_dep_edit.Size = new System.Drawing.Size(226, 25);
             this.date_dep_edit.TabIndex = 17;
             // 
             // airport_from_edit
@@ -495,7 +498,7 @@
             this.airport_from_edit.FormattingEnabled = true;
             this.airport_from_edit.Location = new System.Drawing.Point(11, 239);
             this.airport_from_edit.Name = "airport_from_edit";
-            this.airport_from_edit.Size = new System.Drawing.Size(274, 30);
+            this.airport_from_edit.Size = new System.Drawing.Size(274, 25);
             this.airport_from_edit.TabIndex = 19;
             // 
             // label13
@@ -504,7 +507,7 @@
             this.label13.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(7, 156);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(252, 22);
+            this.label13.Size = new System.Drawing.Size(210, 18);
             this.label13.TabIndex = 31;
             this.label13.Text = "Выберите дату прибытия:";
             // 
@@ -512,7 +515,7 @@
             // 
             this.date_arr_edit.Location = new System.Drawing.Point(11, 181);
             this.date_arr_edit.Name = "date_arr_edit";
-            this.date_arr_edit.Size = new System.Drawing.Size(226, 30);
+            this.date_arr_edit.Size = new System.Drawing.Size(226, 25);
             this.date_arr_edit.TabIndex = 18;
             // 
             // label7
@@ -522,7 +525,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(349, 37);
+            this.label7.Size = new System.Drawing.Size(277, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Авиарейсы\"";
             // 
@@ -536,12 +539,38 @@
             this.panel1.Size = new System.Drawing.Size(977, 462);
             this.panel1.TabIndex = 8;
             // 
+            // excel
+            // 
+            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.excel.Location = new System.Drawing.Point(98, 20);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(75, 23);
+            this.excel.TabIndex = 14;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = false;
+            this.excel.Click += new System.EventHandler(this.excel_Click);
+            // 
+            // pdf
+            // 
+            this.pdf.BackColor = System.Drawing.Color.Red;
+            this.pdf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pdf.Location = new System.Drawing.Point(17, 20);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(75, 23);
+            this.pdf.TabIndex = 13;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = false;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            // 
             // FlightForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1017, 283);
+            this.Controls.Add(this.excel);
+            this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -551,10 +580,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "FlightForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авиарейсы";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FlightForm_FormClosing);
             this.Load += new System.EventHandler(this.FlightForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flights)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -612,5 +644,7 @@
         private System.Windows.Forms.ComboBox airport_from_edit;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker date_arr_edit;
+        private System.Windows.Forms.Button excel;
+        private System.Windows.Forms.Button pdf;
     }
 }

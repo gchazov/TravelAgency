@@ -101,6 +101,7 @@ namespace TravelAgency.Forms
 
         private void addbtn_Click(object sender, EventArgs e)
         {
+            
             if (Airport.ValidateIATA(textBox1.Text)
                 && textBox2.Text != ""
                 && comboBox1.Text != "")
@@ -213,6 +214,33 @@ namespace TravelAgency.Forms
         {
             textBox5.Text = "";
             textBox6.Text = "";
+        }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Аэропорты PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(airports, sfd.FileName);
+            }
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Аэропорты Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(airports, sfd.FileName);
+            }
+        }
+
+        private void AirportForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
         }
     }
 }

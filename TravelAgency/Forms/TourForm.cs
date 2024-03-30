@@ -323,5 +323,10 @@ namespace TravelAgency.Forms
                 MainPanel.ExportToExcel(tours, sfd.FileName);
             }
         }
+
+        private void TourForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button4_Click(sender, e);
+        }
     }
 }

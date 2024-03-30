@@ -29,5 +29,33 @@ namespace TravelAgency.Queries
             Perm.GetPerm();
             display.DataSource = Perm.dtTours;
         }
+
+        private void pdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "PDF (*.pdf)|*.pdf";
+            sfd.FileName = "Жители Перми PDF-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToPDF(display, sfd.FileName);
+            }
+
+        }
+
+        private void excel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            sfd.FileName = "Жители Перми Excel-отчет от " + DateTime.Now.ToString("dd-MM-yyyy HH-mm");
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                MainPanel.ExportToExcel(display, sfd.FileName);
+            }
+        }
+
+        private void PermForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            button1_Click(sender, e);
+        }
     }
 }

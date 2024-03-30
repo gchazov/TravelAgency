@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
             this.clients = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.clear_add = new System.Windows.Forms.Button();
@@ -59,6 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.excel = new System.Windows.Forms.Button();
+            this.pdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clients)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,7 +126,7 @@
             this.passport_add.Location = new System.Drawing.Point(11, 197);
             this.passport_add.MaxLength = 45;
             this.passport_add.Name = "passport_add";
-            this.passport_add.Size = new System.Drawing.Size(264, 36);
+            this.passport_add.Size = new System.Drawing.Size(264, 30);
             this.passport_add.TabIndex = 7;
             // 
             // label8
@@ -132,7 +135,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(7, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 22);
+            this.label8.Size = new System.Drawing.Size(146, 18);
             this.label8.TabIndex = 12;
             this.label8.Text = "Введите паспорт:";
             // 
@@ -141,7 +144,7 @@
             this.phone_add.Location = new System.Drawing.Point(10, 259);
             this.phone_add.MaxLength = 11;
             this.phone_add.Name = "phone_add";
-            this.phone_add.Size = new System.Drawing.Size(179, 36);
+            this.phone_add.Size = new System.Drawing.Size(179, 30);
             this.phone_add.TabIndex = 8;
             // 
             // address_add
@@ -149,7 +152,7 @@
             this.address_add.Location = new System.Drawing.Point(10, 130);
             this.address_add.MaxLength = 45;
             this.address_add.Name = "address_add";
-            this.address_add.Size = new System.Drawing.Size(264, 36);
+            this.address_add.Size = new System.Drawing.Size(264, 30);
             this.address_add.TabIndex = 6;
             // 
             // label4
@@ -158,7 +161,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(7, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(182, 22);
+            this.label4.Size = new System.Drawing.Size(150, 18);
             this.label4.TabIndex = 11;
             this.label4.Text = "Введите телефон:";
             // 
@@ -168,7 +171,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 22);
+            this.label1.Size = new System.Drawing.Size(118, 18);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите ФИО: ";
             // 
@@ -201,7 +204,7 @@
             this.name_add.Location = new System.Drawing.Point(10, 57);
             this.name_add.MaxLength = 45;
             this.name_add.Name = "name_add";
-            this.name_add.Size = new System.Drawing.Size(264, 36);
+            this.name_add.Size = new System.Drawing.Size(264, 30);
             this.name_add.TabIndex = 5;
             // 
             // label2
@@ -210,7 +213,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 22);
+            this.label2.Size = new System.Drawing.Size(130, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Введите адрес:";
             // 
@@ -264,7 +267,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 22);
+            this.label5.Size = new System.Drawing.Size(130, 18);
             this.label5.TabIndex = 8;
             this.label5.Text = "Введите адрес:";
             // 
@@ -273,7 +276,7 @@
             this.name_edit.Location = new System.Drawing.Point(10, 57);
             this.name_edit.MaxLength = 45;
             this.name_edit.Name = "name_edit";
-            this.name_edit.Size = new System.Drawing.Size(264, 36);
+            this.name_edit.Size = new System.Drawing.Size(264, 30);
             this.name_edit.TabIndex = 11;
             // 
             // editbtn
@@ -339,7 +342,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(6, 172);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(177, 22);
+            this.label9.Size = new System.Drawing.Size(146, 18);
             this.label9.TabIndex = 16;
             this.label9.Text = "Введите паспорт:";
             // 
@@ -348,7 +351,7 @@
             this.passport_edit.Location = new System.Drawing.Point(10, 197);
             this.passport_edit.MaxLength = 45;
             this.passport_edit.Name = "passport_edit";
-            this.passport_edit.Size = new System.Drawing.Size(264, 36);
+            this.passport_edit.Size = new System.Drawing.Size(264, 30);
             this.passport_edit.TabIndex = 13;
             // 
             // phone_edit
@@ -356,7 +359,7 @@
             this.phone_edit.Location = new System.Drawing.Point(10, 259);
             this.phone_edit.MaxLength = 11;
             this.phone_edit.Name = "phone_edit";
-            this.phone_edit.Size = new System.Drawing.Size(179, 36);
+            this.phone_edit.Size = new System.Drawing.Size(179, 30);
             this.phone_edit.TabIndex = 14;
             // 
             // address_edit
@@ -364,7 +367,7 @@
             this.address_edit.Location = new System.Drawing.Point(10, 130);
             this.address_edit.MaxLength = 45;
             this.address_edit.Name = "address_edit";
-            this.address_edit.Size = new System.Drawing.Size(264, 36);
+            this.address_edit.Size = new System.Drawing.Size(264, 30);
             this.address_edit.TabIndex = 12;
             // 
             // label6
@@ -373,7 +376,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(6, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 22);
+            this.label6.Size = new System.Drawing.Size(150, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Введите телефон:";
             // 
@@ -383,7 +386,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 22);
+            this.label3.Size = new System.Drawing.Size(114, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите ФИО:";
             // 
@@ -394,7 +397,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(303, 37);
+            this.label7.Size = new System.Drawing.Size(240, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Клиенты\"";
             // 
@@ -408,12 +411,38 @@
             this.panel1.Size = new System.Drawing.Size(939, 371);
             this.panel1.TabIndex = 8;
             // 
+            // excel
+            // 
+            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.excel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.excel.Location = new System.Drawing.Point(98, 20);
+            this.excel.Name = "excel";
+            this.excel.Size = new System.Drawing.Size(75, 23);
+            this.excel.TabIndex = 18;
+            this.excel.Text = "Excel";
+            this.excel.UseVisualStyleBackColor = false;
+            this.excel.Click += new System.EventHandler(this.excel_Click);
+            // 
+            // pdf
+            // 
+            this.pdf.BackColor = System.Drawing.Color.Red;
+            this.pdf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pdf.Location = new System.Drawing.Point(17, 20);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(75, 23);
+            this.pdf.TabIndex = 17;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = false;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            // 
             // ClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(973, 279);
+            this.Controls.Add(this.excel);
+            this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -423,10 +452,13 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиенты";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clients)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -472,5 +504,7 @@
         private System.Windows.Forms.TextBox passport_edit;
         private System.Windows.Forms.Button clear_add;
         private System.Windows.Forms.Button clear_edit;
+        private System.Windows.Forms.Button excel;
+        private System.Windows.Forms.Button pdf;
     }
 }
