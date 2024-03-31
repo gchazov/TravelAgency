@@ -29,9 +29,9 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             City.GetCity();
-            comboBox1.DataSource = City.dtCity;
+            comboBox1.DataSource = City.dtCity.Copy();
             comboBox1.DisplayMember = "Название";
-            comboBox2.DataSource = City.dtCity;
+            comboBox2.DataSource = City.dtCity.Copy();
             comboBox2.DisplayMember = "Название";
             Airport.GetAirport();
             

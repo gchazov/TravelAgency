@@ -417,6 +417,7 @@
             this.city_edit.Name = "city_edit";
             this.city_edit.Size = new System.Drawing.Size(180, 25);
             this.city_edit.TabIndex = 17;
+            this.city_edit.SelectedIndexChanged += new System.EventHandler(this.city_edit_SelectedIndexChanged);
             // 
             // canceleditbtn
             // 
@@ -619,7 +620,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(973, 282);
+            this.ClientSize = new System.Drawing.Size(973, 278);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);

@@ -37,15 +37,15 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             City.GetCity();
-            city_add.DataSource = City.dtCity;
+            city_add.DataSource = City.dtCity.Copy();
             city_add.DisplayMember = "Название";
-            city_edit.DataSource = City.dtCity;
+            city_edit.DataSource = City.dtCity.Copy();
             city_edit.DisplayMember = "Название";
             Hotel.GetHotel();
-            hotel_add.DataSource = Hotel.dtHotel;
-            hotel_add.DisplayMember = "Название";
-            hotel_edit.DataSource = Hotel.dtHotel;
-            hotel_edit.DisplayMember = "Название";
+            //hotel_add.DataSource = Hotel.dtHotel.Copy();
+            //hotel_add.DisplayMember = "Название";
+            //hotel_edit.DataSource = Hotel.dtHotel.Copy();
+            //hotel_edit.DisplayMember = "Название";
 
             date_add.CustomFormat = "yyyy-MM-dd";
             date_edit.CustomFormat = "yyyy-MM-dd";
@@ -299,6 +299,30 @@ namespace TravelAgency.Forms
 
         private void city_add_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (city_add.SelectedItem != null)
+            {
+                string selectedCity = city_add.Text;
+                try
+                {
+                    DBconnection.msCommand.CommandText = "SELECT hotel.name AS \"Название\", " +
+                        "Hotel.stars AS \"Количество звёзд\", " +
+                        "city.name AS \"Город\" FROM Hotel" +
+                        " INNER JOIN city ON city_id = city.id" +
+                        $" WHERE city.name = '{selectedCity}';";
+
+                    DataTable dtFilteredHotels = new DataTable();
+                    DBconnection.msDataAdapter.SelectCommand = DBconnection.msCommand;
+                    DBconnection.msDataAdapter.Fill(dtFilteredHotels);
+
+                    hotel_add.DataSource = dtFilteredHotels.Copy();
+                    
+                    hotel_add.DisplayMember = "Название";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void pdf_Click(object sender, EventArgs e)
@@ -327,6 +351,34 @@ namespace TravelAgency.Forms
         private void TourForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             button4_Click(sender, e);
+        }
+
+        private void city_edit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (city_edit.SelectedItem != null)
+            {
+                string selectedCity = city_edit.Text;
+                try
+                {
+                    DBconnection.msCommand.CommandText = "SELECT hotel.name AS \"Название\", " +
+                        "Hotel.stars AS \"Количество звёзд\", " +
+                        "city.name AS \"Город\" FROM Hotel" +
+                        " INNER JOIN city ON city_id = city.id" +
+                        $" WHERE city.name = '{selectedCity}';";
+
+                    DataTable dtFilteredHotels = new DataTable();
+                    DBconnection.msDataAdapter.SelectCommand = DBconnection.msCommand;
+                    DBconnection.msDataAdapter.Fill(dtFilteredHotels);
+
+                    hotel_edit.DataSource = dtFilteredHotels.Copy();
+
+                    hotel_edit.DisplayMember = "Название";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

@@ -31,10 +31,10 @@ namespace TravelAgency.Forms
             groupBox2.Visible = false;
             City.GetCity();
             addCity.DisplayMember = "Название";
-            editCity.DataSource = City.dtCity;
+            editCity.DataSource = City.dtCity.Copy();
             editCity.DisplayMember = "Название";
             Hotel.GetHotel();
-            hotels.DataSource = Hotel.dtHotel;
+            hotels.DataSource = Hotel.dtHotel.Copy();
             addCity.DataSource = City.dtCity;
             
             string[] stars = new string[] { "1", "2", "3", "4", "5", "-" };

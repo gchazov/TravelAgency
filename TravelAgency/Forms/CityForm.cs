@@ -30,9 +30,9 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             Country.GetCountry();
-            addCountry.DataSource = Country.dtCountry;
+            addCountry.DataSource = Country.dtCountry.Copy();
             addCountry.DisplayMember = "Название";
-            editCountry.DataSource = Country.dtCountry;
+            editCountry.DataSource = Country.dtCountry.Copy();
             editCountry.DisplayMember = "Название";
             City.GetCity();
             cities.DataSource = City.dtCity;

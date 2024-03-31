@@ -48,21 +48,21 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             Tour.GetTour();
-            tour_add.DataSource = Tour.dtTour;
+            tour_add.DataSource = Tour.dtTour.Copy();
             tour_add.DisplayMember = "Название";
-            tour_edit.DataSource = Tour.dtTour;
+            tour_edit.DataSource = Tour.dtTour.Copy();
             tour_edit.DisplayMember = "Название";
 
             Tables.Client.GetClient();
-            client_add.DataSource = Tables.Client.dtClient;
+            client_add.DataSource = Tables.Client.dtClient.Copy();
             client_add.DisplayMember = "ФИО";
-            client_edit.DataSource = Tables.Client.dtClient;
+            client_edit.DataSource = Tables.Client.dtClient.Copy();
             client_edit.DisplayMember = "ФИО";
 
             Employee.GetEmployee();
-            employee_add.DataSource = Employee.dtEmployee;
+            employee_add.DataSource = Employee.dtEmployee.Copy();
             employee_add.DisplayMember = "ФИО";
-            employee_edit.DataSource = Employee.dtEmployee;
+            employee_edit.DataSource = Employee.dtEmployee.Copy();
             employee_edit.DisplayMember = "ФИО";
 
             date_add.Format = DateTimePickerFormat.Custom;

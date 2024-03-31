@@ -34,20 +34,20 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             Airport.GetAirport();
-            airport_from_add.DataSource = Airport.dtAirport;
+            airport_from_add.DataSource = Airport.dtAirport.Copy();
             airport_from_add.DisplayMember = "Название";
-            airport_to_add.DataSource = Airport.dtAirport;
+            airport_to_add.DataSource = Airport.dtAirport.Copy();
             airport_to_add.DisplayMember = "Название";
-            airport_from_edit.DataSource = Airport.dtAirport;
+            airport_from_edit.DataSource = Airport.dtAirport.Copy();
             airport_from_edit.DisplayMember = "Название";
-            airport_to_edit.DataSource = Airport.dtAirport;
+            airport_to_edit.DataSource = Airport.dtAirport.Copy();
             airport_to_edit.DisplayMember = "Название";
 
 
             Tour.GetTour();
-            tour_add.DataSource = Tour.dtTour;
+            tour_add.DataSource = Tour.dtTour.Copy();
             tour_add.DisplayMember = "Название";
-            tour_edit.DataSource = Tour.dtTour;
+            tour_edit.DataSource = Tour.dtTour.Copy();
             tour_edit.DisplayMember = "Название";
 
             date_dep_add.Format = DateTimePickerFormat.Custom;

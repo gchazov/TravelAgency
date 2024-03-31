@@ -212,7 +212,7 @@ namespace TravelAgency
             {
                 using (ExcelPackage excelPackage = new ExcelPackage())
                 {
-                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Tours");
+                    ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Отчет");
 
                     worksheet.Cells["A1"].Value = "Отчёт от " + DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss");
                     worksheet.Cells["A1"].Style.Font.Bold = true;

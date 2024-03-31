@@ -31,9 +31,9 @@ namespace TravelAgency.Forms
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             Office.GetOffice();
-            office_add.DataSource = Office.dtOffice;
+            office_add.DataSource = Office.dtOffice.Copy();
             office_add.DisplayMember = "Адрес";
-            office_edit.DataSource = Office.dtOffice;
+            office_edit.DataSource = Office.dtOffice.Copy();
             office_edit.DisplayMember = "Адрес";
 
             Employee.GetEmployee();
