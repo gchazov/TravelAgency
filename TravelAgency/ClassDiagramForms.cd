@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TravelAgency.Tables.Airport">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAEAAAAAAAAAAAAAAQIAAAABAAAAE=</HashCode>
+      <FileName>Tables\Airport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.City">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAIIAAAAAgAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Tables\City.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Client">
+    <Position X="14.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAACAAAAAAADAQBAAAA=</HashCode>
+      <FileName>Tables\Client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Contract">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAABAEAAAAAAAAAAAAAEAAAAAgAAAA=</HashCode>
+      <FileName>Tables\Contract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Country">
+    <Position X="16.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAGAAAAAAIAAgAAAAAAAAAAAAAAAAAAAEEAAAAAAA=</HashCode>
+      <FileName>Tables\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Employee">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQAAAIAgABAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Tables\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Flight">
+    <Position X="2" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAIAIAAAgAABAAAAAAAIAA=</HashCode>
+      <FileName>Tables\Flight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Hotel">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACBAAAAAAAAAAAAAAAAgEAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Tables\Hotel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Office">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAgQAAAAAAOAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tables\Office.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Tables.Tour">
+    <Position X="8" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAgIBAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Tables\Tour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Queries.ByersMoreAvg">
+    <Position X="8" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Queries\ByersMoreAvg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Queries.FlightTime">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Queries\FlightTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Queries.OfficeAvg">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Queries\OfficeAvg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Queries.Perm">
+    <Position X="5.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Queries\Perm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TravelAgency.Queries.SoldTours">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Queries\SoldTours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

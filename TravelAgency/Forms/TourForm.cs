@@ -1,21 +1,8 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.Diagnostics;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.IO;
 
 namespace TravelAgency.Forms
 {
@@ -25,6 +12,7 @@ namespace TravelAgency.Forms
         public TourForm()
         {
             InitializeComponent();
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -51,7 +39,7 @@ namespace TravelAgency.Forms
             date_edit.CustomFormat = "yyyy-MM-dd";
             Tour.GetTour();
             tours.DataSource = Tour.dtTour;
-            
+
             originalHeight = this.Height;
         }
 
@@ -121,7 +109,7 @@ namespace TravelAgency.Forms
                 city_add.Text != "" &&
                 hotel_add.Text != "" &&
                 accomodation_add.Text != "" &&
-                meal_add.Text != "" && 
+                meal_add.Text != "" &&
                 duration_add.Text != "" &&
                 cost_add.Text != "")
             {
@@ -143,7 +131,7 @@ namespace TravelAgency.Forms
                 }
                 else
                 {
-                    if (Tour.AddTour(name_add.Text, city_add.Text, hotel_add.Text, accomodation_add.Text, meal_add.Text, 
+                    if (Tour.AddTour(name_add.Text, city_add.Text, hotel_add.Text, accomodation_add.Text, meal_add.Text,
                         date_add.Value.Date.ToString("yyyy-MM-dd"), duration_add.Text, cost_add.Text))
                     {
                         MessageBox.Show("Тур добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,8 +161,8 @@ namespace TravelAgency.Forms
         {
             if (tours.SelectedRows.Count > 0)
             {
-                string name,  city,  hotel,  accomodation,
-                meal,  date_start,  duration,  cost;
+                string name, city, hotel, accomodation,
+                meal, date_start, duration, cost;
                 var res = false;
                 foreach (DataGridViewRow row in tours.SelectedRows)
                 {
@@ -184,7 +172,7 @@ namespace TravelAgency.Forms
                     accomodation = row.Cells["Тип проживания"].Value.ToString();
                     meal = row.Cells["Тип питания"].Value.ToString();
 
-                    date_start = DateTime.ParseExact(row.Cells["Дата начала"].Value.ToString(), 
+                    date_start = DateTime.ParseExact(row.Cells["Дата начала"].Value.ToString(),
                         "dd.MM.yyyy h:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
 
                     duration = row.Cells["Длительность"].Value.ToString();
@@ -243,10 +231,10 @@ namespace TravelAgency.Forms
                         "dd.MM.yyyy h:mm:ss", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
                         string old_duration = row.Cells["Длительность"].Value.ToString();
                         string old_cost = row.Cells["Стоимость"].Value.ToString();
-                        if (Tour.EditTour(old_name, name_edit.Text, old_city, city_edit.Text, 
+                        if (Tour.EditTour(old_name, name_edit.Text, old_city, city_edit.Text,
                             old_hotel, hotel_edit.Text, old_accomodation, accomodation_edit.Text,
                             old_meal, meal_edit.Text,
-                            old_date_start, date_edit.Value.Date.ToString("yyyy-MM-dd"), old_duration, duration_edit.Text, 
+                            old_date_start, date_edit.Value.Date.ToString("yyyy-MM-dd"), old_duration, duration_edit.Text,
                             old_cost, cost_edit.Text))
                         {
                             MessageBox.Show("Данные о туре изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -315,7 +303,7 @@ namespace TravelAgency.Forms
                     DBconnection.msDataAdapter.Fill(dtFilteredHotels);
 
                     hotel_add.DataSource = dtFilteredHotels.Copy();
-                    
+
                     hotel_add.DisplayMember = "Название";
                 }
                 catch (Exception ex)

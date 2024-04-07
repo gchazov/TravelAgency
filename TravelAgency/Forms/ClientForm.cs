@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -32,7 +24,7 @@ namespace TravelAgency.Forms
 
             Client.GetClient();
             clients.DataSource = Client.dtClient;
-            
+
             originalHeight = this.Height;
         }
 
@@ -148,7 +140,7 @@ namespace TravelAgency.Forms
             {
                 string name, address, passport, phone;
                 var res = false;
-                foreach(DataGridViewRow row in clients.SelectedRows)
+                foreach (DataGridViewRow row in clients.SelectedRows)
                 {
                     name = row.Cells["ФИО"].Value.ToString();
                     address = row.Cells["Адрес"].Value.ToString();

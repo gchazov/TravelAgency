@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
 
@@ -34,7 +27,7 @@ namespace TravelAgency.Forms
             comboBox2.DataSource = City.dtCity.Copy();
             comboBox2.DisplayMember = "Название";
             Airport.GetAirport();
-            
+
             airports.DataSource = Airport.dtAirport;
             originalHeight = this.Height;
         }
@@ -101,7 +94,7 @@ namespace TravelAgency.Forms
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            
+
             if (Airport.ValidateIATA(textBox1.Text)
                 && textBox2.Text != ""
                 && comboBox1.Text != "")

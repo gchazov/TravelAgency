@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -36,7 +28,7 @@ namespace TravelAgency.Forms
             Hotel.GetHotel();
             hotels.DataSource = Hotel.dtHotel.Copy();
             addCity.DataSource = City.dtCity;
-            
+
             string[] stars = new string[] { "1", "2", "3", "4", "5", "-" };
             stars_add.DataSource = stars;
             stars_edit.DataSource = stars;
@@ -151,7 +143,7 @@ namespace TravelAgency.Forms
             {
                 string name, stars, city;
                 var res = false;
-                foreach(DataGridViewRow row in hotels.SelectedRows)
+                foreach (DataGridViewRow row in hotels.SelectedRows)
                 {
                     name = row.Cells["Название"].Value.ToString();
                     stars = row.Cells["Количество звёзд"].Value.ToString();
@@ -161,7 +153,7 @@ namespace TravelAgency.Forms
 
                 }
                 Hotel.GetHotel();
-                if (res)MessageBox.Show($"Все выбранные отели успешно удалены!");
+                if (res) MessageBox.Show($"Все выбранные отели успешно удалены!");
             }
             else
             {
@@ -191,7 +183,7 @@ namespace TravelAgency.Forms
                         string old_name = row.Cells["Название"].Value.ToString();
                         string old_city = row.Cells["Город"].Value.ToString();
                         string old_stars = row.Cells["Количество звёзд"].Value.ToString();
-                        if (Hotel.EditHotel(old_name, name_field_edit.Text, old_city, editCity.Text, 
+                        if (Hotel.EditHotel(old_name, name_field_edit.Text, old_city, editCity.Text,
                             old_stars, stars_edit.Text))
                         {
                             MessageBox.Show("Данные об отеле изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -1,32 +1,15 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using iTextSharp.text;
-using MySqlX.XDevAPI;
+﻿using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.IO;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentFormat.OpenXml;
-using iTextSharp.text.pdf;
-using Microsoft.Office.Interop.Word;
 using Application = Microsoft.Office.Interop.Word.Application;
-using Document = Microsoft.Office.Interop.Word.Document;
-using System.Reflection;
-using Type = System.Type;
-using DocumentFormat.OpenXml.Spreadsheet;
-using System.Diagnostics.Contracts;
 using Contract = TravelAgency.Tables.Contract;
+using Document = Microsoft.Office.Interop.Word.Document;
+using Type = System.Type;
 
 namespace TravelAgency.Forms
 {
@@ -73,7 +56,7 @@ namespace TravelAgency.Forms
 
             Contract.GetContract();
             contracts.DataSource = Contract.dtContract;
-            
+
             originalHeight = this.Height;
         }
 
@@ -288,17 +271,17 @@ namespace TravelAgency.Forms
 
         private void clear_btn(object sender, EventArgs e)
         {
-            
+
         }
 
         private void clear_edit_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void city_add_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pdf_Click(object sender, EventArgs e)
@@ -381,7 +364,7 @@ namespace TravelAgency.Forms
             }
             string dateString = rowData.Last();
             DateTime date = DateTime.ParseExact(dateString, "dd.MM.yyyy HH:mm:ss", null);
-            
+
             string mysqlFormattedDate = date.ToString("yyyy-MM-dd HH:mm");
             rowData[3] = mysqlFormattedDate;
 

@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media.Media3D;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -38,7 +29,7 @@ namespace TravelAgency.Forms
 
             Employee.GetEmployee();
             employees.DataSource = Employee.dtEmployee;
-            
+
             originalHeight = this.Height;
         }
 
@@ -159,7 +150,7 @@ namespace TravelAgency.Forms
             {
                 string name, address, passport, phone, position, office;
                 var res = false;
-                foreach(DataGridViewRow row in employees.SelectedRows)
+                foreach (DataGridViewRow row in employees.SelectedRows)
                 {
                     name = row.Cells["ФИО"].Value.ToString();
                     address = row.Cells["Адрес"].Value.ToString();
@@ -214,7 +205,7 @@ namespace TravelAgency.Forms
                         string old_position = row.Cells["Должность"].Value.ToString();
                         string old_office = row.Cells["Адрес работы"].Value.ToString();
                         if (Employee.EditEmployee(old_name, name_edit.Text, old_address, address_edit.Text,
-                            old_passport, passport_edit.Text, old_phone, phone_edit.Text, 
+                            old_passport, passport_edit.Text, old_phone, phone_edit.Text,
                             old_position, position_edit.Text, old_office, office_edit.Text))
                         {
                             MessageBox.Show("Данные о сотруднике изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -32,7 +24,7 @@ namespace TravelAgency.Forms
 
             Office.GetOffice();
             offices.DataSource = Office.dtOffice;
-            
+
             originalHeight = this.Height;
         }
 
@@ -146,7 +138,7 @@ namespace TravelAgency.Forms
             {
                 string address, CEO, phone;
                 var res = false;
-                foreach(DataGridViewRow row in offices.SelectedRows)
+                foreach (DataGridViewRow row in offices.SelectedRows)
                 {
                     address = row.Cells["Адрес"].Value.ToString();
                     CEO = row.Cells["ФИО директора"].Value.ToString();
@@ -187,7 +179,7 @@ namespace TravelAgency.Forms
                         string old_address = row.Cells["Адрес"].Value.ToString();
                         string old_CEO = row.Cells["ФИО директора"].Value.ToString();
                         string old_phone = row.Cells["Телефон"].Value.ToString();
-                        if (Office.EditOffice(old_address, address_edit.Text, old_CEO, CEO_edit.Text, 
+                        if (Office.EditOffice(old_address, address_edit.Text, old_CEO, CEO_edit.Text,
                             old_phone, phone_edit.Text))
                         {
                             MessageBox.Show("Данные о филиале изменены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);

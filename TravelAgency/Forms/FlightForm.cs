@@ -1,18 +1,7 @@
-﻿using DocumentFormat.OpenXml.ExtendedProperties;
-using Google.Protobuf.WellKnownTypes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using System;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelAgency.Tables;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelAgency.Forms
 {
@@ -62,7 +51,7 @@ namespace TravelAgency.Forms
 
             Flight.GetFlight();
             flights.DataSource = Flight.dtFlight;
-            
+
             originalHeight = this.Height;
         }
 
@@ -151,7 +140,7 @@ namespace TravelAgency.Forms
                 }
                 else
                 {
-                    if (Flight.AddFlight(id_add.Text, date_dep_add.Text + ":00", 
+                    if (Flight.AddFlight(id_add.Text, date_dep_add.Text + ":00",
                         date_arr_add.Text + ":00", airport_from_add.Text,
                         airport_to_add.Text, tour_add.Text, flight_company_add.Text))
                     {
@@ -291,7 +280,7 @@ namespace TravelAgency.Forms
                         tour = row.Cells["Тур"].Value.ToString();
                         flight_company = row.Cells["Авиакомпания"].Value.ToString();
 
-                        if (Flight.EditFlight(id, id_edit.Text, date_dep, date_dep_edit.Text + ":00", 
+                        if (Flight.EditFlight(id, id_edit.Text, date_dep, date_dep_edit.Text + ":00",
                             date_arr, date_arr_edit.Text + ":00", airport_from, airport_from_edit.Text,
                             airport_to, airport_to_edit.Text, tour, tour_edit.Text, flight_company, flight_company_edit.Text))
                         {

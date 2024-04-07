@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
-
+using System.Windows.Controls.Primitives;
 namespace TravelAgency.Tables
 {
     internal class Tour
@@ -40,6 +41,10 @@ namespace TravelAgency.Tables
             }
         }
 
+       
+
+
+
         static public bool AddTour(string name, string city, string hotel, string accomodation,
             string meal, string date_start, string duration, string cost)
         {
@@ -57,7 +62,7 @@ namespace TravelAgency.Tables
                     $"\"{cost}\");";
                 return DBconnection.msCommand.ExecuteNonQuery() > 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("У пользователя недостаточно прав для совершения этого действия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -90,7 +95,7 @@ namespace TravelAgency.Tables
                     $"cost = \"{old_cost}\";";
                 return DBconnection.msCommand.ExecuteNonQuery() > 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("У пользователя недостаточно прав для совершения этого действия!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -116,7 +121,8 @@ namespace TravelAgency.Tables
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"У пользователя {DBconnection.login} не достаточно полномочий для совершения этого действия! Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"У пользователя {DBconnection.login} недостаточно полномочий для совершения этого действия! " +
+                    $"Обратитесь к старшему менеджеру.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
