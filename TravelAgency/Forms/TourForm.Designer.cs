@@ -51,7 +51,6 @@
             this.name_add = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -139,7 +138,7 @@
             this.hotel_add.FormattingEnabled = true;
             this.hotel_add.Location = new System.Drawing.Point(10, 173);
             this.hotel_add.Name = "hotel_add";
-            this.hotel_add.Size = new System.Drawing.Size(180, 25);
+            this.hotel_add.Size = new System.Drawing.Size(180, 30);
             this.hotel_add.TabIndex = 8;
             // 
             // city_add
@@ -148,7 +147,7 @@
             this.city_add.FormattingEnabled = true;
             this.city_add.Location = new System.Drawing.Point(10, 115);
             this.city_add.Name = "city_add";
-            this.city_add.Size = new System.Drawing.Size(180, 25);
+            this.city_add.Size = new System.Drawing.Size(180, 30);
             this.city_add.TabIndex = 6;
             this.city_add.SelectedIndexChanged += new System.EventHandler(this.city_add_SelectedIndexChanged);
             // 
@@ -157,7 +156,7 @@
             this.cost_add.Location = new System.Drawing.Point(230, 289);
             this.cost_add.MaxLength = 45;
             this.cost_add.Name = "cost_add";
-            this.cost_add.Size = new System.Drawing.Size(108, 25);
+            this.cost_add.Size = new System.Drawing.Size(108, 30);
             this.cost_add.TabIndex = 11;
             // 
             // duration_add
@@ -165,7 +164,7 @@
             this.duration_add.Location = new System.Drawing.Point(205, 150);
             this.duration_add.MaxLength = 45;
             this.duration_add.Name = "duration_add";
-            this.duration_add.Size = new System.Drawing.Size(69, 25);
+            this.duration_add.Size = new System.Drawing.Size(69, 30);
             this.duration_add.TabIndex = 7;
             // 
             // label9
@@ -174,7 +173,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(197, 125);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(186, 18);
+            this.label9.Size = new System.Drawing.Size(225, 22);
             this.label9.TabIndex = 23;
             this.label9.Text = "Введите длительность:";
             // 
@@ -184,7 +183,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(226, 264);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 18);
+            this.label6.Size = new System.Drawing.Size(199, 22);
             this.label6.TabIndex = 22;
             this.label6.Text = "Введите стоимость:";
             // 
@@ -192,7 +191,7 @@
             // 
             this.date_add.Location = new System.Drawing.Point(10, 347);
             this.date_add.Name = "date_add";
-            this.date_add.Size = new System.Drawing.Size(221, 25);
+            this.date_add.Size = new System.Drawing.Size(221, 30);
             this.date_add.TabIndex = 12;
             // 
             // meal_add
@@ -200,7 +199,7 @@
             this.meal_add.Location = new System.Drawing.Point(10, 288);
             this.meal_add.MaxLength = 45;
             this.meal_add.Name = "meal_add";
-            this.meal_add.Size = new System.Drawing.Size(205, 25);
+            this.meal_add.Size = new System.Drawing.Size(205, 30);
             this.meal_add.TabIndex = 10;
             // 
             // accomodation_add
@@ -208,7 +207,7 @@
             this.accomodation_add.Location = new System.Drawing.Point(10, 231);
             this.accomodation_add.MaxLength = 45;
             this.accomodation_add.Name = "accomodation_add";
-            this.accomodation_add.Size = new System.Drawing.Size(243, 25);
+            this.accomodation_add.Size = new System.Drawing.Size(243, 30);
             this.accomodation_add.TabIndex = 9;
             // 
             // label12
@@ -217,7 +216,7 @@
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(5, 321);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(176, 18);
+            this.label12.Size = new System.Drawing.Size(213, 22);
             this.label12.TabIndex = 16;
             this.label12.Text = "Введите дату начала:";
             // 
@@ -227,7 +226,7 @@
             this.label10.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.Location = new System.Drawing.Point(6, 263);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(172, 18);
+            this.label10.Size = new System.Drawing.Size(209, 22);
             this.label10.TabIndex = 14;
             this.label10.Text = "Введите тип питания:";
             // 
@@ -249,7 +248,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(6, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 18);
+            this.label8.Size = new System.Drawing.Size(161, 22);
             this.label8.TabIndex = 12;
             this.label8.Text = "Выберите отель";
             // 
@@ -259,7 +258,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(6, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(204, 18);
+            this.label4.Size = new System.Drawing.Size(247, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "Введите тип проживания:";
             // 
@@ -269,7 +268,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 18);
+            this.label1.Size = new System.Drawing.Size(184, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите название:";
             // 
@@ -302,7 +301,7 @@
             this.name_add.Location = new System.Drawing.Point(10, 57);
             this.name_add.MaxLength = 45;
             this.name_add.Name = "name_add";
-            this.name_add.Size = new System.Drawing.Size(264, 25);
+            this.name_add.Size = new System.Drawing.Size(264, 30);
             this.name_add.TabIndex = 5;
             // 
             // label2
@@ -311,7 +310,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 18);
+            this.label2.Size = new System.Drawing.Size(168, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите город:";
             // 
@@ -320,31 +319,20 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(820, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
+            this.button1.Size = new System.Drawing.Size(164, 92);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить тур";
+            this.button1.Text = "Открыть панель редактирования";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(820, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранный";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(820, 170);
+            this.button3.Location = new System.Drawing.Point(820, 157);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 54);
+            this.button3.Size = new System.Drawing.Size(164, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранный";
+            this.button3.Text = "Удалить выбранные";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -353,7 +341,7 @@
             this.button4.BackColor = System.Drawing.Color.Pink;
             this.button4.Location = new System.Drawing.Point(820, 230);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 40);
+            this.button4.Size = new System.Drawing.Size(164, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "Назад";
             this.button4.UseVisualStyleBackColor = false;
@@ -394,7 +382,7 @@
             this.hotel_edit.FormattingEnabled = true;
             this.hotel_edit.Location = new System.Drawing.Point(10, 173);
             this.hotel_edit.Name = "hotel_edit";
-            this.hotel_edit.Size = new System.Drawing.Size(180, 25);
+            this.hotel_edit.Size = new System.Drawing.Size(180, 30);
             this.hotel_edit.TabIndex = 19;
             // 
             // clear_edit
@@ -415,7 +403,7 @@
             this.city_edit.FormattingEnabled = true;
             this.city_edit.Location = new System.Drawing.Point(10, 115);
             this.city_edit.Name = "city_edit";
-            this.city_edit.Size = new System.Drawing.Size(180, 25);
+            this.city_edit.Size = new System.Drawing.Size(180, 30);
             this.city_edit.TabIndex = 17;
             this.city_edit.SelectedIndexChanged += new System.EventHandler(this.city_edit_SelectedIndexChanged);
             // 
@@ -436,7 +424,7 @@
             this.cost_edit.Location = new System.Drawing.Point(230, 289);
             this.cost_edit.MaxLength = 45;
             this.cost_edit.Name = "cost_edit";
-            this.cost_edit.Size = new System.Drawing.Size(108, 25);
+            this.cost_edit.Size = new System.Drawing.Size(108, 30);
             this.cost_edit.TabIndex = 22;
             // 
             // editbtn
@@ -456,7 +444,7 @@
             this.duration_edit.Location = new System.Drawing.Point(205, 150);
             this.duration_edit.MaxLength = 45;
             this.duration_edit.Name = "duration_edit";
-            this.duration_edit.Size = new System.Drawing.Size(69, 25);
+            this.duration_edit.Size = new System.Drawing.Size(69, 30);
             this.duration_edit.TabIndex = 18;
             // 
             // label16
@@ -465,7 +453,7 @@
             this.label16.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.Location = new System.Drawing.Point(6, 32);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(152, 18);
+            this.label16.Size = new System.Drawing.Size(184, 22);
             this.label16.TabIndex = 30;
             this.label16.Text = "Введите название:";
             // 
@@ -475,7 +463,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(197, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 18);
+            this.label3.Size = new System.Drawing.Size(225, 22);
             this.label3.TabIndex = 39;
             this.label3.Text = "Введите длительность:";
             // 
@@ -485,7 +473,7 @@
             this.label17.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17.Location = new System.Drawing.Point(6, 90);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 18);
+            this.label17.Size = new System.Drawing.Size(168, 22);
             this.label17.TabIndex = 28;
             this.label17.Text = "Выберите город:";
             // 
@@ -495,7 +483,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(226, 264);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 18);
+            this.label5.Size = new System.Drawing.Size(199, 22);
             this.label5.TabIndex = 38;
             this.label5.Text = "Введите стоимость:";
             // 
@@ -504,14 +492,14 @@
             this.name_edit.Location = new System.Drawing.Point(10, 57);
             this.name_edit.MaxLength = 45;
             this.name_edit.Name = "name_edit";
-            this.name_edit.Size = new System.Drawing.Size(264, 25);
+            this.name_edit.Size = new System.Drawing.Size(264, 30);
             this.name_edit.TabIndex = 16;
             // 
             // date_edit
             // 
             this.date_edit.Location = new System.Drawing.Point(10, 347);
             this.date_edit.Name = "date_edit";
-            this.date_edit.Size = new System.Drawing.Size(221, 25);
+            this.date_edit.Size = new System.Drawing.Size(221, 30);
             this.date_edit.TabIndex = 23;
             // 
             // label15
@@ -520,7 +508,7 @@
             this.label15.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.Location = new System.Drawing.Point(6, 206);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(204, 18);
+            this.label15.Size = new System.Drawing.Size(247, 22);
             this.label15.TabIndex = 31;
             this.label15.Text = "Введите тип проживания:";
             // 
@@ -529,7 +517,7 @@
             this.meal_edit.Location = new System.Drawing.Point(10, 288);
             this.meal_edit.MaxLength = 45;
             this.meal_edit.Name = "meal_edit";
-            this.meal_edit.Size = new System.Drawing.Size(205, 25);
+            this.meal_edit.Size = new System.Drawing.Size(205, 30);
             this.meal_edit.TabIndex = 21;
             // 
             // label14
@@ -538,7 +526,7 @@
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.Location = new System.Drawing.Point(6, 148);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 18);
+            this.label14.Size = new System.Drawing.Size(161, 22);
             this.label14.TabIndex = 32;
             this.label14.Text = "Выберите отель";
             // 
@@ -547,7 +535,7 @@
             this.accomodation_edit.Location = new System.Drawing.Point(10, 231);
             this.accomodation_edit.MaxLength = 45;
             this.accomodation_edit.Name = "accomodation_edit";
-            this.accomodation_edit.Size = new System.Drawing.Size(243, 25);
+            this.accomodation_edit.Size = new System.Drawing.Size(243, 30);
             this.accomodation_edit.TabIndex = 20;
             // 
             // label13
@@ -556,7 +544,7 @@
             this.label13.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(6, 263);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(172, 18);
+            this.label13.Size = new System.Drawing.Size(209, 22);
             this.label13.TabIndex = 33;
             this.label13.Text = "Введите тип питания:";
             // 
@@ -566,7 +554,7 @@
             this.label11.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(5, 321);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(176, 18);
+            this.label11.Size = new System.Drawing.Size(213, 22);
             this.label11.TabIndex = 34;
             this.label11.Text = "Введите дату начала:";
             // 
@@ -577,7 +565,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 28);
+            this.label7.Size = new System.Drawing.Size(247, 37);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Туры\"";
             // 
@@ -617,16 +605,15 @@
             // 
             // TourForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(973, 278);
+            this.ClientSize = new System.Drawing.Size(996, 278);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tours);
             this.Controls.Add(this.panel1);
@@ -656,7 +643,6 @@
         private System.Windows.Forms.DataGridView tours;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button canceladditbtn;
         private System.Windows.Forms.Button addbtn;

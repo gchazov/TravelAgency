@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using TravelAgency.Tables;
 
@@ -37,10 +38,14 @@ namespace TravelAgency.Forms
             if (this.Height == originalHeight)
             {
                 this.Height = groupBox1.Height + originalHeight + 40;
+                button1.Text = "Скрыть панель редактирования";
+                button1.BackColor = Color.Orange;
             }
             else
             {
                 this.Height -= groupBox1.Height + 40;
+                button1.Text = "Открыть панель редактирования";
+                button1.BackColor = Color.Lime;
             }
             groupBox1.Visible = !groupBox1.Visible;
             groupBox2.Visible = !groupBox2.Visible;

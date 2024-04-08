@@ -41,7 +41,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,7 +120,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(10, 177);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 30);
+            this.comboBox1.Size = new System.Drawing.Size(195, 35);
             this.comboBox1.TabIndex = 7;
             // 
             // canceladditbtn
@@ -154,7 +153,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 18);
+            this.label3.Size = new System.Drawing.Size(173, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Выберите город: ";
             // 
@@ -163,7 +162,7 @@
             this.textBox2.Location = new System.Drawing.Point(10, 116);
             this.textBox2.MaxLength = 45;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(297, 30);
+            this.textBox2.Size = new System.Drawing.Size(297, 36);
             this.textBox2.TabIndex = 6;
             // 
             // label2
@@ -172,7 +171,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 18);
+            this.label2.Size = new System.Drawing.Size(189, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Введите название: ";
             // 
@@ -181,7 +180,7 @@
             this.textBox1.Location = new System.Drawing.Point(10, 55);
             this.textBox1.MaxLength = 3;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 30);
+            this.textBox1.Size = new System.Drawing.Size(68, 36);
             this.textBox1.TabIndex = 5;
             // 
             // label1
@@ -190,7 +189,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 18);
+            this.label1.Size = new System.Drawing.Size(180, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Введите IATA код: ";
             // 
@@ -199,31 +198,20 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(612, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
+            this.button1.Size = new System.Drawing.Size(155, 102);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить аэропорт";
+            this.button1.Text = "Открыть панель редактирования";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(612, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранный";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(612, 170);
+            this.button3.Location = new System.Drawing.Point(612, 158);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 54);
+            this.button3.Size = new System.Drawing.Size(155, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранный";
+            this.button3.Text = "Удалить выбранные";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -232,7 +220,7 @@
             this.button4.BackColor = System.Drawing.Color.Pink;
             this.button4.Location = new System.Drawing.Point(612, 230);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 40);
+            this.button4.Size = new System.Drawing.Size(155, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "Назад";
             this.button4.UseVisualStyleBackColor = false;
@@ -244,7 +232,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(7, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 18);
+            this.label5.Size = new System.Drawing.Size(189, 22);
             this.label5.TabIndex = 8;
             this.label5.Text = "Введите название: ";
             // 
@@ -253,7 +241,7 @@
             this.textBox5.Location = new System.Drawing.Point(11, 116);
             this.textBox5.MaxLength = 45;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(302, 30);
+            this.textBox5.Size = new System.Drawing.Size(302, 36);
             this.textBox5.TabIndex = 12;
             // 
             // textBox6
@@ -261,7 +249,7 @@
             this.textBox6.Location = new System.Drawing.Point(11, 55);
             this.textBox6.MaxLength = 3;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(67, 30);
+            this.textBox6.Size = new System.Drawing.Size(67, 36);
             this.textBox6.TabIndex = 11;
             // 
             // label4
@@ -270,7 +258,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(7, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 18);
+            this.label4.Size = new System.Drawing.Size(168, 22);
             this.label4.TabIndex = 10;
             this.label4.Text = "Выберите город:";
             // 
@@ -280,7 +268,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(7, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 18);
+            this.label6.Size = new System.Drawing.Size(180, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Введите IATA код: ";
             // 
@@ -343,10 +331,10 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 22;
+            this.comboBox2.ItemHeight = 27;
             this.comboBox2.Location = new System.Drawing.Point(11, 177);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(185, 30);
+            this.comboBox2.Size = new System.Drawing.Size(185, 35);
             this.comboBox2.TabIndex = 12;
             // 
             // label7
@@ -355,7 +343,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(229, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(278, 28);
+            this.label7.Size = new System.Drawing.Size(350, 37);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Аэропорты\"";
             // 
@@ -395,16 +383,15 @@
             // 
             // AirportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(764, 280);
+            this.ClientSize = new System.Drawing.Size(782, 280);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.airports);
             this.Controls.Add(this.panel1);
@@ -434,7 +421,6 @@
         private System.Windows.Forms.DataGridView airports;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button canceladditbtn;

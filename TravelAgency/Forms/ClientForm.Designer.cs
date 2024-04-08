@@ -43,7 +43,6 @@
             this.name_add = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -126,7 +125,7 @@
             this.passport_add.Location = new System.Drawing.Point(11, 197);
             this.passport_add.MaxLength = 45;
             this.passport_add.Name = "passport_add";
-            this.passport_add.Size = new System.Drawing.Size(264, 30);
+            this.passport_add.Size = new System.Drawing.Size(264, 36);
             this.passport_add.TabIndex = 7;
             // 
             // label8
@@ -135,7 +134,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(7, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(146, 18);
+            this.label8.Size = new System.Drawing.Size(177, 22);
             this.label8.TabIndex = 12;
             this.label8.Text = "Введите паспорт:";
             // 
@@ -144,7 +143,7 @@
             this.phone_add.Location = new System.Drawing.Point(10, 259);
             this.phone_add.MaxLength = 11;
             this.phone_add.Name = "phone_add";
-            this.phone_add.Size = new System.Drawing.Size(179, 30);
+            this.phone_add.Size = new System.Drawing.Size(179, 36);
             this.phone_add.TabIndex = 8;
             // 
             // address_add
@@ -152,7 +151,7 @@
             this.address_add.Location = new System.Drawing.Point(10, 130);
             this.address_add.MaxLength = 45;
             this.address_add.Name = "address_add";
-            this.address_add.Size = new System.Drawing.Size(264, 30);
+            this.address_add.Size = new System.Drawing.Size(264, 36);
             this.address_add.TabIndex = 6;
             // 
             // label4
@@ -161,7 +160,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(7, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 18);
+            this.label4.Size = new System.Drawing.Size(182, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "Введите телефон:";
             // 
@@ -171,7 +170,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 18);
+            this.label1.Size = new System.Drawing.Size(143, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите ФИО: ";
             // 
@@ -204,7 +203,7 @@
             this.name_add.Location = new System.Drawing.Point(10, 57);
             this.name_add.MaxLength = 45;
             this.name_add.Name = "name_add";
-            this.name_add.Size = new System.Drawing.Size(264, 30);
+            this.name_add.Size = new System.Drawing.Size(264, 36);
             this.name_add.TabIndex = 5;
             // 
             // label2
@@ -213,7 +212,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 18);
+            this.label2.Size = new System.Drawing.Size(157, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Введите адрес:";
             // 
@@ -222,31 +221,20 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(820, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
+            this.button1.Size = new System.Drawing.Size(176, 82);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить клиента";
+            this.button1.Text = "Открыть панель редактирования";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(820, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранного";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(820, 170);
+            this.button3.Location = new System.Drawing.Point(820, 153);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 54);
+            this.button3.Size = new System.Drawing.Size(176, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранного";
+            this.button3.Text = "Удалить выбранные";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -255,7 +243,7 @@
             this.button4.BackColor = System.Drawing.Color.Pink;
             this.button4.Location = new System.Drawing.Point(820, 230);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 40);
+            this.button4.Size = new System.Drawing.Size(176, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "Назад";
             this.button4.UseVisualStyleBackColor = false;
@@ -267,7 +255,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 18);
+            this.label5.Size = new System.Drawing.Size(157, 22);
             this.label5.TabIndex = 8;
             this.label5.Text = "Введите адрес:";
             // 
@@ -276,7 +264,7 @@
             this.name_edit.Location = new System.Drawing.Point(10, 57);
             this.name_edit.MaxLength = 45;
             this.name_edit.Name = "name_edit";
-            this.name_edit.Size = new System.Drawing.Size(264, 30);
+            this.name_edit.Size = new System.Drawing.Size(264, 36);
             this.name_edit.TabIndex = 11;
             // 
             // editbtn
@@ -342,7 +330,7 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(6, 172);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 18);
+            this.label9.Size = new System.Drawing.Size(177, 22);
             this.label9.TabIndex = 16;
             this.label9.Text = "Введите паспорт:";
             // 
@@ -351,7 +339,7 @@
             this.passport_edit.Location = new System.Drawing.Point(10, 197);
             this.passport_edit.MaxLength = 45;
             this.passport_edit.Name = "passport_edit";
-            this.passport_edit.Size = new System.Drawing.Size(264, 30);
+            this.passport_edit.Size = new System.Drawing.Size(264, 36);
             this.passport_edit.TabIndex = 13;
             // 
             // phone_edit
@@ -359,7 +347,7 @@
             this.phone_edit.Location = new System.Drawing.Point(10, 259);
             this.phone_edit.MaxLength = 11;
             this.phone_edit.Name = "phone_edit";
-            this.phone_edit.Size = new System.Drawing.Size(179, 30);
+            this.phone_edit.Size = new System.Drawing.Size(179, 36);
             this.phone_edit.TabIndex = 14;
             // 
             // address_edit
@@ -367,7 +355,7 @@
             this.address_edit.Location = new System.Drawing.Point(10, 130);
             this.address_edit.MaxLength = 45;
             this.address_edit.Name = "address_edit";
-            this.address_edit.Size = new System.Drawing.Size(264, 30);
+            this.address_edit.Size = new System.Drawing.Size(264, 36);
             this.address_edit.TabIndex = 12;
             // 
             // label6
@@ -376,7 +364,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(6, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 18);
+            this.label6.Size = new System.Drawing.Size(182, 22);
             this.label6.TabIndex = 12;
             this.label6.Text = "Введите телефон:";
             // 
@@ -386,7 +374,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 18);
+            this.label3.Size = new System.Drawing.Size(138, 22);
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите ФИО:";
             // 
@@ -397,7 +385,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 28);
+            this.label7.Size = new System.Drawing.Size(303, 37);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Клиенты\"";
             // 
@@ -437,16 +425,15 @@
             // 
             // ClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(973, 279);
+            this.ClientSize = new System.Drawing.Size(1022, 279);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.clients);
             this.Controls.Add(this.panel1);
@@ -476,7 +463,6 @@
         private System.Windows.Forms.DataGridView clients;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button canceladditbtn;
         private System.Windows.Forms.Button addbtn;

@@ -41,7 +41,6 @@
             this.name_field_add = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,7 +120,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(7, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 18);
+            this.label4.Size = new System.Drawing.Size(230, 22);
             this.label4.TabIndex = 11;
             this.label4.Text = "Выберите кол-во звёзд:";
             // 
@@ -131,7 +130,7 @@
             this.stars_add.FormattingEnabled = true;
             this.stars_add.Location = new System.Drawing.Point(10, 206);
             this.stars_add.Name = "stars_add";
-            this.stars_add.Size = new System.Drawing.Size(247, 30);
+            this.stars_add.Size = new System.Drawing.Size(247, 35);
             this.stars_add.TabIndex = 7;
             // 
             // addCity
@@ -140,7 +139,7 @@
             this.addCity.FormattingEnabled = true;
             this.addCity.Location = new System.Drawing.Point(10, 131);
             this.addCity.Name = "addCity";
-            this.addCity.Size = new System.Drawing.Size(247, 30);
+            this.addCity.Size = new System.Drawing.Size(247, 35);
             this.addCity.TabIndex = 6;
             // 
             // label1
@@ -149,7 +148,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 18);
+            this.label1.Size = new System.Drawing.Size(189, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Введите название: ";
             // 
@@ -182,7 +181,7 @@
             this.name_field_add.Location = new System.Drawing.Point(10, 57);
             this.name_field_add.MaxLength = 20;
             this.name_field_add.Name = "name_field_add";
-            this.name_field_add.Size = new System.Drawing.Size(247, 30);
+            this.name_field_add.Size = new System.Drawing.Size(247, 36);
             this.name_field_add.TabIndex = 5;
             // 
             // label2
@@ -191,7 +190,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 18);
+            this.label2.Size = new System.Drawing.Size(168, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите город:";
             // 
@@ -200,31 +199,20 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(635, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
+            this.button1.Size = new System.Drawing.Size(153, 86);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить отель";
+            this.button1.Text = "Открыть панель редактирования";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(635, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранный";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(635, 170);
+            this.button3.Location = new System.Drawing.Point(635, 156);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 54);
+            this.button3.Size = new System.Drawing.Size(153, 54);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Удалить выбранный";
+            this.button3.Text = "Удалить выбранные";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -233,7 +221,7 @@
             this.button4.BackColor = System.Drawing.Color.Pink;
             this.button4.Location = new System.Drawing.Point(635, 230);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 40);
+            this.button4.Size = new System.Drawing.Size(153, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "Назад";
             this.button4.UseVisualStyleBackColor = false;
@@ -245,7 +233,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 105);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 18);
+            this.label5.Size = new System.Drawing.Size(168, 22);
             this.label5.TabIndex = 8;
             this.label5.Text = "Выберите город:";
             // 
@@ -254,7 +242,7 @@
             this.name_field_edit.Location = new System.Drawing.Point(10, 57);
             this.name_field_edit.MaxLength = 20;
             this.name_field_edit.Name = "name_field_edit";
-            this.name_field_edit.Size = new System.Drawing.Size(264, 30);
+            this.name_field_edit.Size = new System.Drawing.Size(264, 36);
             this.name_field_edit.TabIndex = 11;
             // 
             // editbtn
@@ -318,7 +306,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(6, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(190, 18);
+            this.label6.Size = new System.Drawing.Size(230, 22);
             this.label6.TabIndex = 12;
             this.label6.Text = "Выберите кол-во звёзд:";
             // 
@@ -328,7 +316,7 @@
             this.stars_edit.FormattingEnabled = true;
             this.stars_edit.Location = new System.Drawing.Point(10, 206);
             this.stars_edit.Name = "stars_edit";
-            this.stars_edit.Size = new System.Drawing.Size(247, 30);
+            this.stars_edit.Size = new System.Drawing.Size(247, 35);
             this.stars_edit.TabIndex = 13;
             // 
             // editCity
@@ -337,7 +325,7 @@
             this.editCity.FormattingEnabled = true;
             this.editCity.Location = new System.Drawing.Point(10, 130);
             this.editCity.Name = "editCity";
-            this.editCity.Size = new System.Drawing.Size(247, 30);
+            this.editCity.Size = new System.Drawing.Size(247, 35);
             this.editCity.TabIndex = 12;
             // 
             // label3
@@ -346,7 +334,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 18);
+            this.label3.Size = new System.Drawing.Size(184, 22);
             this.label3.TabIndex = 9;
             this.label3.Text = "Введите название:";
             // 
@@ -357,7 +345,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 28);
+            this.label7.Size = new System.Drawing.Size(268, 37);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Отели\"";
             // 
@@ -397,16 +385,15 @@
             // 
             // HotelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(800, 281);
+            this.ClientSize = new System.Drawing.Size(810, 281);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.hotels);
             this.Controls.Add(this.panel1);
@@ -436,7 +423,6 @@
         private System.Windows.Forms.DataGridView hotels;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button canceladditbtn;
         private System.Windows.Forms.Button addbtn;

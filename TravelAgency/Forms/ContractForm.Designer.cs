@@ -42,7 +42,6 @@
             this.addbtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -113,7 +112,7 @@
             this.employee_add.FormattingEnabled = true;
             this.employee_add.Location = new System.Drawing.Point(10, 176);
             this.employee_add.Name = "employee_add";
-            this.employee_add.Size = new System.Drawing.Size(255, 25);
+            this.employee_add.Size = new System.Drawing.Size(255, 30);
             this.employee_add.TabIndex = 7;
             // 
             // label1
@@ -122,7 +121,7 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(6, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 18);
+            this.label1.Size = new System.Drawing.Size(225, 22);
             this.label1.TabIndex = 18;
             this.label1.Text = "Выберите сотрудника:";
             // 
@@ -132,7 +131,7 @@
             this.client_add.FormattingEnabled = true;
             this.client_add.Location = new System.Drawing.Point(10, 118);
             this.client_add.Name = "client_add";
-            this.client_add.Size = new System.Drawing.Size(255, 25);
+            this.client_add.Size = new System.Drawing.Size(255, 30);
             this.client_add.TabIndex = 6;
             // 
             // tour_add
@@ -141,7 +140,7 @@
             this.tour_add.FormattingEnabled = true;
             this.tour_add.Location = new System.Drawing.Point(10, 60);
             this.tour_add.Name = "tour_add";
-            this.tour_add.Size = new System.Drawing.Size(255, 25);
+            this.tour_add.Size = new System.Drawing.Size(255, 30);
             this.tour_add.TabIndex = 5;
             this.tour_add.SelectedIndexChanged += new System.EventHandler(this.city_add_SelectedIndexChanged);
             // 
@@ -149,7 +148,7 @@
             // 
             this.date_add.Location = new System.Drawing.Point(11, 235);
             this.date_add.Name = "date_add";
-            this.date_add.Size = new System.Drawing.Size(221, 25);
+            this.date_add.Size = new System.Drawing.Size(221, 30);
             this.date_add.TabIndex = 8;
             // 
             // label12
@@ -158,7 +157,7 @@
             this.label12.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.Location = new System.Drawing.Point(6, 209);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(289, 18);
+            this.label12.Size = new System.Drawing.Size(349, 22);
             this.label12.TabIndex = 16;
             this.label12.Text = "Введите дату заключения договора:";
             // 
@@ -168,7 +167,7 @@
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(6, 93);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(156, 18);
+            this.label8.Size = new System.Drawing.Size(189, 22);
             this.label8.TabIndex = 12;
             this.label8.Text = "Выберите клиента:";
             // 
@@ -202,7 +201,7 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(6, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 18);
+            this.label2.Size = new System.Drawing.Size(145, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Выберите тур:";
             // 
@@ -211,29 +210,18 @@
             this.button1.BackColor = System.Drawing.Color.Lime;
             this.button1.Location = new System.Drawing.Point(820, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 54);
+            this.button1.Size = new System.Drawing.Size(157, 89);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить договор";
+            this.button1.Text = "Открыть панель редактирования";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Orange;
-            this.button2.Location = new System.Drawing.Point(820, 110);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Редактировать выбранный";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Crimson;
-            this.button3.Location = new System.Drawing.Point(820, 170);
+            this.button3.Location = new System.Drawing.Point(820, 159);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 54);
+            this.button3.Size = new System.Drawing.Size(157, 54);
             this.button3.TabIndex = 3;
             this.button3.Text = "Удалить выбранный";
             this.button3.UseVisualStyleBackColor = false;
@@ -244,7 +232,7 @@
             this.button4.BackColor = System.Drawing.Color.Pink;
             this.button4.Location = new System.Drawing.Point(820, 230);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 40);
+            this.button4.Size = new System.Drawing.Size(157, 40);
             this.button4.TabIndex = 4;
             this.button4.Text = "Назад";
             this.button4.UseVisualStyleBackColor = false;
@@ -274,10 +262,10 @@
             // 
             this.employee_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employee_edit.FormattingEnabled = true;
-            this.employee_edit.ItemHeight = 17;
+            this.employee_edit.ItemHeight = 22;
             this.employee_edit.Location = new System.Drawing.Point(10, 176);
             this.employee_edit.Name = "employee_edit";
-            this.employee_edit.Size = new System.Drawing.Size(255, 25);
+            this.employee_edit.Size = new System.Drawing.Size(255, 30);
             this.employee_edit.TabIndex = 13;
             // 
             // label3
@@ -286,7 +274,7 @@
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(6, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 18);
+            this.label3.Size = new System.Drawing.Size(225, 22);
             this.label3.TabIndex = 26;
             this.label3.Text = "Выберите сотрудника:";
             // 
@@ -306,10 +294,10 @@
             // 
             this.client_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.client_edit.FormattingEnabled = true;
-            this.client_edit.ItemHeight = 17;
+            this.client_edit.ItemHeight = 22;
             this.client_edit.Location = new System.Drawing.Point(10, 118);
             this.client_edit.Name = "client_edit";
-            this.client_edit.Size = new System.Drawing.Size(255, 25);
+            this.client_edit.Size = new System.Drawing.Size(255, 30);
             this.client_edit.TabIndex = 12;
             // 
             // editbtn
@@ -328,10 +316,10 @@
             // 
             this.tour_edit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tour_edit.FormattingEnabled = true;
-            this.tour_edit.ItemHeight = 17;
+            this.tour_edit.ItemHeight = 22;
             this.tour_edit.Location = new System.Drawing.Point(10, 60);
             this.tour_edit.Name = "tour_edit";
-            this.tour_edit.Size = new System.Drawing.Size(255, 25);
+            this.tour_edit.Size = new System.Drawing.Size(255, 30);
             this.tour_edit.TabIndex = 11;
             // 
             // label6
@@ -340,7 +328,7 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(6, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 18);
+            this.label6.Size = new System.Drawing.Size(145, 22);
             this.label6.TabIndex = 19;
             this.label6.Text = "Выберите тур:";
             // 
@@ -348,7 +336,7 @@
             // 
             this.date_edit.Location = new System.Drawing.Point(11, 235);
             this.date_edit.Name = "date_edit";
-            this.date_edit.Size = new System.Drawing.Size(221, 25);
+            this.date_edit.Size = new System.Drawing.Size(221, 30);
             this.date_edit.TabIndex = 14;
             // 
             // label5
@@ -357,7 +345,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(6, 93);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 18);
+            this.label5.Size = new System.Drawing.Size(189, 22);
             this.label5.TabIndex = 23;
             this.label5.Text = "Выберите клиента:";
             // 
@@ -367,7 +355,7 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(6, 209);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 18);
+            this.label4.Size = new System.Drawing.Size(349, 22);
             this.label4.TabIndex = 24;
             this.label4.Text = "Введите дату заключения договора:";
             // 
@@ -378,7 +366,7 @@
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(261, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(259, 28);
+            this.label7.Size = new System.Drawing.Size(325, 37);
             this.label7.TabIndex = 7;
             this.label7.Text = "Таблица \"Договоры\"";
             // 
@@ -418,16 +406,15 @@
             // 
             // ContractForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(973, 281);
+            this.ClientSize = new System.Drawing.Size(989, 281);
             this.Controls.Add(this.excel);
             this.Controls.Add(this.pdf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.contracts);
             this.Controls.Add(this.panel1);
@@ -457,7 +444,6 @@
         private System.Windows.Forms.DataGridView contracts;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button canceladditbtn;
         private System.Windows.Forms.Button addbtn;
